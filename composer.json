@@ -19,7 +19,7 @@
     "require": {
         "roave/security-advisories": "dev-master",
         "composer/installers": "^1.0",
-        "drupal-composer/drupal-scaffold": "^2.0.1",
+        "drupal-composer/drupal-scaffold": "^1.2",
         "cweagans/composer-patches": "1.5.0",
         "drupal/lightning": "8.1.00-rc6",
         "drupal/diff": "8.1.0-alpha2",
