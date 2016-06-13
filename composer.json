@@ -11,14 +11,23 @@
         "drush/drush": "^8",
         "drupal/console": "~0.10",
         "phpmd/phpmd": "~2.1",
-        "drupal/coder": "^8.2"
+        "drupal/admin_toolbar": "8.1.15",
+        "drupal/coder": "^8.2",
+        "drupal/devel": "dev-8.x-1.x",
+        "drupal/masquerade": "8.1.0-beta1"
     },
     "require": {
         "roave/security-advisories": "dev-master",
         "composer/installers": "^1.0",
         "drupal-composer/drupal-scaffold": "^2.0.1",
         "cweagans/composer-patches": "1.5.0",
-        "drupal/lightning": "8.1.*"
+        "drupal/lightning": "8.1.*",
+        "drupal/diff": "8.1.0-alpha2",
+        "drupal/field_group": "8.1.0-rc4",
+        "drupal/paragraphs": "8.1.0-rc5",
+        "drupal/restui": "8.1.11",
+        "drupal/search_api": "8.1.0-alpha15",
+        "drupal/search_api_solr": "8.1.0-alpha4"
     },
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
