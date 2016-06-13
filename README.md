@@ -7,7 +7,7 @@ You will need to install the following:
 * [Composer](https://getcomposer.org)
 * [Node](https://nodejs.org)
 
-Then, either clone this repo and run `composer install`.  This will create a build/html directory containing the Drupal 8 docroot.
+Then, either clone this repo and run `composer install` followed by `composer drupal-scaffold`  This will create a build/html directory containing the Drupal 8 docroot.
 Finally, run the Drupal installer as normal.
 
 Currently this distribution is based on the [Lightning](https://www.drupal.org/project/lightning) from Acquia.
