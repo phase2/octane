@@ -34,6 +34,14 @@
     },
     "extra": {
         "enable-patching": true,
+        "patches": {
+            "drupal/core": {
+                "2743197 - Provide a workaroud to load additional profiles via settings.php":
+                    "https://www.drupal.org/files/issues/2743197-load_additional_profiles_via_settings-2.patch",
+                "2655104 - List unmet dependencies instead of just failing":
+                    "https://www.drupal.org/files/issues/list-missing-dependencies-2655104-19.patch"
+            }
+        },
         "installer-paths": {
             "build/html/core": [
                 "type:drupal-core"
@@ -50,8 +58,6 @@
             "build/html/drush": [
                 "type:drupal-drush"
             ]
-        },
-        "patches": {
         }
     }
 }
