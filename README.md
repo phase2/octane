@@ -11,3 +11,10 @@ Then, either clone this repo and run `composer install` followed by `composer dr
 Finally, run the Drupal installer as normal.
 
 Currently this distribution is based on the [Lightning](https://www.drupal.org/project/lightning) from Acquia.
+
+## Customizing
+The composer.json file is currently configured to build your drupal docroot within a build/html directory.  
+If you clone this repo for your own use you might need to change this directory.  
+Removing `build/html/` from the "installer-paths" will build the Drupal docroot into the current directory.
+
+NOTE: The directory containing the composer.json will need to be accessible to your web server since the generated autoload.php will point to the vendor directory that is created.
