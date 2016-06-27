@@ -1,0 +1,14 @@
+<?php
+
+/**
+ * @file
+ * Install, update and uninstall functions for the Octane installation
+ * profile.
+ */
+
+/**
+ * Implements hook_install().
+ */
+function octane_install() {
+}
+

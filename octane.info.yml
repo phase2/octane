@@ -1,0 +1,57 @@
+name: Octane
+type: profile
+description: 'A Drupal distribution based on Lightning.'
+core: 8.x
+distribution:
+  name: Octane
+
+# Base profile
+base_profile: lightning
+
+# Required modules
+dependencies:
+  # core
+  - block_content
+  - breakpoint
+  - ckeditor
+  - config
+  - contextual
+  - contact
+  - menu_link_content
+  - datetime
+  - block_content
+  - quickedit
+  - editor
+  - entity_reference
+  - help
+  - history
+  - image
+  - menu_ui
+  - node
+  - options
+  - path
+  - page_cache
+  - taxonomy
+  - text
+  - dblog
+  - shortcut
+  - toolbar
+  - field_ui
+  - file
+  - rdf
+  - views
+  - views_ui
+  # contrib
+  - diff
+  - features
+  - features_ui
+  - metatag
+  - paragraphs
+  # Lightning modules
+  - lightning_core
+  - lightning_layout
+  - lightning_media
+
+themes:
+  - bartik
+  - seven
