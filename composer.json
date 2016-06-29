@@ -1,7 +1,7 @@
 {
-    "name": "phase2/octane",
+    "name": "drupal/octane",
     "description": "Template for Drupal 8 sites built using the Octane distribution.",
-    "type": "project",
+    "type": "drupal-profile",
     "license": "GPL-2.0+",
     "minimum-stability": "dev",
     "prefer-stable": true,
