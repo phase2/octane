@@ -32,8 +32,10 @@
         "drupal/field_group": "8.1.0-rc4",
         "drupal/paragraphs": "8.1.0-rc5",
         "drupal/restui": "8.1.11",
-        "drupal/search_api": "8.1.0-alpha15",
-        "drupal/search_api_solr": "8.1.0-alpha4"
+        "drupal/search_api": "8.1.0-alpha16",
+        "drupal/search_api_solr": "dev-8.x-1.x",
+        "drupal/search_api_page": "8.1.0-alpha11",
+        "drupal/facets": "8.1.0-alpha4"
     },
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
