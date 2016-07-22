@@ -48,9 +48,10 @@ dependencies:
   - metatag
   - paragraphs
   # Lightning modules
-  - lightning_core
-  - lightning_layout
-  - lightning_media
+  #COMMENT out lightning_* modules since they need to be enabled AFTER the profile is installed
+  #- lightning_core
+  #- lightning_layout
+  #- lightning_media
   # octane contrib
   - search_api
   - facets
