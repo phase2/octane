@@ -27,7 +27,7 @@
         "composer/installers": "^1.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "cweagans/composer-patches": "1.5.0",
-        "drupal/lightning": "8.1.02",
+        "drupal/lightning": "dev-8.x-2.x",
         "drupal/diff": "8.1.0-alpha2",
         "drupal/field_group": "8.1.0-rc4",
         "drupal/paragraphs": "8.1.0-rc5",
@@ -44,8 +44,8 @@
         "enable-patching": true,
         "patches": {
             "drupal/core": {
-                "2743197 - Provide a workaroud to load additional profiles via settings.php":
-                "https://www.drupal.org/files/issues/make_inherited_install-1356276-129.patch",
+                "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
+                "https://www.drupal.org/files/issues/make_inherited_install-1356276-158.patch",
                 "2655104 - List unmet dependencies instead of just failing":
                 "https://www.drupal.org/files/issues/list-missing-dependencies-2655104-19.patch"
             }
