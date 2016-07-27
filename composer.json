@@ -27,12 +27,12 @@
         "composer/installers": "^1.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "cweagans/composer-patches": "1.5.0",
-        "drupal/lightning": "dev-8.x-2.x",
+        "drupal/lightning": "8.1.02",
         "drupal/diff": "8.1.0-alpha2",
         "drupal/field_group": "8.1.0-rc4",
         "drupal/paragraphs": "8.1.0-rc5",
         "drupal/restui": "8.1.11",
-        "drupal/search_api": "dev-8.x-1.x",
+        "drupal/search_api": "8.1.0-alpha16",
         "drupal/search_api_solr": "dev-8.x-1.x",
         "drupal/search_api_page": "8.1.0-alpha11",
         "drupal/facets": "8.1.0-alpha4"
@@ -48,6 +48,10 @@
                 "https://www.drupal.org/files/issues/make_inherited_install-1356276-158.patch",
                 "2655104 - List unmet dependencies instead of just failing":
                 "https://www.drupal.org/files/issues/list-missing-dependencies-2655104-19.patch"
+            },
+            "drupal/lightning": {
+                "2773519 - Cleaning up config in lightning features and profile":
+                "https://www.drupal.org/files/issues/2773519-lightning-cleaning_up_config-2.patch"
             }
         },
         "installer-paths": {

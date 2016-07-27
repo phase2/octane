@@ -6,58 +6,36 @@ distribution:
   name: Octane
 
 # Base profile
-base_profile: lightning
+base_profile:
+  name: lightning
 
 # Required modules
 dependencies:
-  # core
-  - block_content
-  - breakpoint
-  - ckeditor
-  - config
-  - contextual
-  - contact
-  - menu_link_content
-  - datetime
-  - block_content
-  - quickedit
-  - editor
-  - entity_reference
-  - help
-  - history
-  - image
-  - menu_ui
-  - node
-  - options
-  - path
-  - page_cache
-  - taxonomy
-  - text
-  - dblog
-  - shortcut
-  - toolbar
-  - field_ui
-  - file
-  - rdf
-  - views
-  - views_ui
-  # contrib
+  # contrib from Lightning
   - diff
+  - entity_browser_entity_form
   - features
   - features_ui
-  - metatag
-  - paragraphs
+  - field_group
+  - page_manager_ui
   # Lightning modules
-  #COMMENT out lightning_* modules since they need to be enabled AFTER the profile is installed
-  #- lightning_core
-  #- lightning_layout
-  #- lightning_media
-  # octane contrib
+  - lightning_core
+  - lightning_layout
+  - lightning_media
+  ### octane contrib
+  # - media entities
+  - lightning_media_document
+  - lightning_media_image
+  - lightning_media_instagram
+  - lightning_media_twitter
+  # - search
   - search_api
   - facets
   - search_api_db
   - search_api_solr
   - search_api_page
+  # - other contrib
+  - paragraphs
 
 themes:
   - bartik
