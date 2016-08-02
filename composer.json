@@ -51,7 +51,7 @@
         "patches": {
             "drupal/core": {
                 "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
-                "https://www.drupal.org/files/issues/make_inherited_install-1356276-181.patch",
+                "https://www.drupal.org/files/issues/make_inherited_install-1356276-196.patch",
                 "2655104 - List unmet dependencies instead of just failing":
                 "https://www.drupal.org/files/issues/list-missing-dependencies-2655104-19.patch"
             },
