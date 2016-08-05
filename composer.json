@@ -53,7 +53,7 @@
                 "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
                 "https://www.drupal.org/files/issues/1356276-227.patch",
                 "2655104 - List unmet dependencies instead of just failing":
-                "https://www.drupal.org/files/issues/list-missing-dependencies-2655104-19.patch"
+                "https://www.drupal.org/files/issues/2655104-39.patch"
             },
             "drupal/lightning": {
                 "2773519 - Cleaning up config in lightning features and profile":
