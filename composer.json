@@ -33,7 +33,7 @@
         "composer/installers": "^1.0",
         "drupal-composer/drupal-scaffold": "^2.0.0",
         "cweagans/composer-patches": "1.5.0",
-        "drupal/lightning": "8.1.03",
+        "drupal/lightning": "8.1.05",
         "drupal/diff": "8.1.0-alpha2",
         "drupal/field_group": "8.1.0-rc4",
         "drupal/paragraphs": "8.1.0-rc5",
@@ -51,26 +51,22 @@
         "patches": {
             "drupal/core": {
                 "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
-                "https://www.drupal.org/files/issues/1356276-227.patch",
+                "https://www.drupal.org/files/issues/1356276-239.patch",
                 "2655104 - List unmet dependencies instead of just failing":
                 "https://www.drupal.org/files/issues/2655104-39.patch"
-            },
-            "drupal/lightning": {
-                "2773519 - Cleaning up config in lightning features and profile":
-                "https://www.drupal.org/files/issues/2773519-lightning-cleaning_up_config-2.patch"
             }
         },
         "installer-paths": {
-            "build/html/core": [
+            "core": [
                 "type:drupal-core"
             ],
-            "build/html/modules/contrib/{$name}": [
+            "modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
-            "build/html/profiles/contrib/{$name}": [
+            "profiles/contrib/{$name}": [
                 "type:drupal-profile"
             ],
-            "build/html/themes/contrib/{$name}": [
+            "themes/contrib/{$name}": [
                 "type:drupal-theme"
             ],
             "build/html/drush": [
