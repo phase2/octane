@@ -2,6 +2,5 @@
 
 /**
  * @file
- * Profile file for Octane distribution
+ * Profile file for Octane distribution.
  */
-
