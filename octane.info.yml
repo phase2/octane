@@ -6,7 +6,7 @@ distribution:
   name: Octane
 
 # Base profile
-base_profile:
+base profile:
   name: lightning
 
 # Required modules
