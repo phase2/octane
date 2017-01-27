@@ -12,6 +12,7 @@
     }
   ],
   "require-dev": {
+    "behat/behat": "^3.0",
     "behat/mink": "~1.7",
     "behat/mink-zombie-driver": "~1.2",
     "behat/mink-goutte-driver": "~1.2",
@@ -19,14 +20,17 @@
     "jcalderonzumba/gastonjs": "~1.0.2",
     "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
     "mikey179/vfsStream": "~1.2",
+    "se/selenium-server-standalone": "^2.53",
     "phpunit/phpunit": "~4.8",
     "drush/drush": "^8",
     "drupal/console": "~1.0.0",
     "phpmd/phpmd": "~2.1",
     "drupal/admin_toolbar": "^1.18",
     "drupal/coder": "^8.2",
+    "squizlabs/php_codesniffer": "2.*",
     "drupal/devel": "^1.0.0-rc1",
-    "drupal/masquerade": "2.0.0-beta1"
+    "drupal/masquerade": "2.0.0-beta1",
+    "symfony/css-selector": "~2.8",
   },
   "require": {
     "roave/security-advisories": "dev-master",
