@@ -30,7 +30,7 @@
     "squizlabs/php_codesniffer": "2.*",
     "drupal/devel": "^1.0.0-rc1",
     "drupal/masquerade": "2.0.0-beta1",
-    "symfony/css-selector": "~2.8",
+    "symfony/css-selector": "~2.8"
   },
   "require": {
     "roave/security-advisories": "dev-master",
