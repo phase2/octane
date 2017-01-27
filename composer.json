@@ -8,14 +8,14 @@
   "repositories": [
     {
       "type": "composer",
-      "url": "https://packagist.drupal-composer.org"
+      "url": "https://packages.drupal.org/8"
     }
   ],
   "require-dev": {
     "behat/mink": "~1.7",
     "behat/mink-zombie-driver": "~1.2",
     "behat/mink-goutte-driver": "~1.2",
-    "drupal/drupal-extension": "~3.0",
+    "drupal/drupal-extension": "~3.2",
     "jcalderonzumba/gastonjs": "~1.0.2",
     "jcalderonzumba/mink-phantomjs-driver": "~0.3.1",
     "mikey179/vfsStream": "~1.2",
@@ -23,26 +23,26 @@
     "drush/drush": "^8",
     "drupal/console": "~1.0.0",
     "phpmd/phpmd": "~2.1",
-    "drupal/admin_toolbar": "~8.1",
+    "drupal/admin_toolbar": "^1.18",
     "drupal/coder": "^8.2",
-    "drupal/devel": "dev-8.x-1.x",
-    "drupal/masquerade": "8.1.0-beta1"
+    "drupal/devel": "^1.0.0-rc1",
+    "drupal/masquerade": "2.0.0-beta1"
   },
   "require": {
     "roave/security-advisories": "dev-master",
     "composer/installers": "^1.0",
     "drupal-composer/drupal-scaffold": "^2.0.0",
     "cweagans/composer-patches": "1.5.0",
-    "drupal/lightning": "~8.1",
-    "drupal/diff": "~8.1",
-    "drupal/field_group": "~8.1",
-    "drupal/paragraphs": "dev-8.x-1.x",
-    "drupal/restui": "~8.1",
-    "drupal/search_api": "~8.1",
-    "drupal/search_api_solr": "dev-8.x-1.x",
-    "drupal/search_api_page": "~8.1",
-    "drupal/facets": "dev-8.x-1.x",
-    "drupal/components": "~8.1"
+    "acquia/lightning": "~2.0.0",
+    "drupal/diff": "^1.0",
+    "drupal/field_group": "^1.0",
+    "drupal/paragraphs": "1.x-dev",
+    "drupal/restui": "^1.0",
+    "drupal/search_api": "^1.0",
+    "drupal/search_api_solr": "1.x-dev",
+    "drupal/search_api_page": "^1.0",
+    "drupal/facets": "1.x-dev",
+    "drupal/components": "^1.0"
   },
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
