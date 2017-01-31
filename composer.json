@@ -36,7 +36,7 @@
     "roave/security-advisories": "dev-master",
     "composer/installers": "^1.0",
     "drupal-composer/drupal-scaffold": "^2.0.0",
-    "cweagans/composer-patches": "1.5.0",
+    "cweagans/composer-patches": "~1.6",
     "acquia/lightning": "~2.0.0",
     "drupal/core": "~8.2.0",
     "drupal/diff": "^1.0",
