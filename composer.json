@@ -26,7 +26,7 @@
     "drupal/console": "~1.0.0",
     "phpmd/phpmd": "~2.1",
     "drupal/admin_toolbar": "^1.18",
-    "drupal/coder": "^8.2",
+    "drupal/coder": "^2.0",
     "squizlabs/php_codesniffer": "2.*",
     "drupal/devel": "^1.0.0-rc1",
     "drupal/masquerade": "2.0.0-beta1",
