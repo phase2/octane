@@ -42,7 +42,6 @@
     "drupal/field_group": "^1.0",
     "drupal/paragraphs": "1.x-dev",
     "drupal/restui": "^1.0",
-    "drupal/search_api": "^1.0",
     "drupal/search_api_solr": "1.x-dev",
     "drupal/search_api_page": "^1.0",
     "drupal/facets": "1.x-dev",
