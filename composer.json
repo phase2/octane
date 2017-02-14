@@ -38,7 +38,6 @@
     "drupal-composer/drupal-scaffold": "^2.0.0",
     "cweagans/composer-patches": "~1.6",
     "acquia/lightning": "~2.0.0",
-    "drupal/core": "~8.2.0",
     "drupal/diff": "^1.0",
     "drupal/field_group": "^1.0",
     "drupal/paragraphs": "1.x-dev",
