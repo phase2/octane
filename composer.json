@@ -72,12 +72,6 @@
           "https://www.drupal.org/files/issues/paragraphs-collapse-new-items-2725141-2.patch",
         "2788607 - Empty required fields not providing meaningful error messages":
           "https://www.drupal.org/files/issues/empty_required_fields-2788607-37.patch"
-      },
-      "drupal/entity_browser": {
-        "2696933 - Styling overflow issue (Committed to dev)":
-          "https://www.drupal.org/files/issues/content_overflow_issue-2696933-31.patch",
-        "2801163 - Missing preview image on widget (Committed to dev)":
-          "https://www.drupal.org/files/issues/2801163-25.patch"
       }
     },
     "installer-paths": {
