@@ -55,7 +55,7 @@
     "patches": {
       "drupal/core": {
         "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
-          "https://www.drupal.org/files/issues/1356276-249.patch",
+          "https://www.drupal.org/files/issues/1356276-276-8.2.x.patch",
         "2655104 - List unmet dependencies instead of just failing (Committed to 8.3.x)":
           "https://www.drupal.org/files/issues/2655104-56.patch",
         "2699157 - Plugin Lazy loading can cause usort warning":
