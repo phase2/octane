@@ -26,6 +26,7 @@ dependencies:
   - lightning_media_instagram
   - lightning_media_twitter
   # - search
+  - facets
   - search_api_db
   - search_api_solr
   - search_api_page
