@@ -37,8 +37,7 @@
     "composer/installers": "^1.0",
     "drupal-composer/drupal-scaffold": "^2.0.0",
     "cweagans/composer-patches": "~1.6",
-    "acquia/lightning": "~2.0.0",
-    "drupal/diff": "^1.0",
+    "acquia/lightning": "~2.0.5",
     "drupal/field_group": "^1.0",
     "drupal/paragraphs": "1.x-dev",
     "drupal/restui": "^1.0",
@@ -54,8 +53,6 @@
     "enable-patching": true,
     "patches": {
       "drupal/core": {
-        "1356276 - Allow profiles to provide a base/parent profile and load them in the correct order":
-          "https://www.drupal.org/files/issues/1356276-276-8.2.x.patch",
         "2655104 - List unmet dependencies instead of just failing (Committed to 8.3.x)":
           "https://www.drupal.org/files/issues/2655104-56.patch",
         "2699157 - Plugin Lazy loading can cause usort warning":
