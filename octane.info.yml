@@ -6,21 +6,19 @@ distribution:
   name: Octane
 
 # Base profile
-base profile: lightning
+base profile:
+  name: lightning
+  excluded_dependencies:
+    - lightning_media_video
 
 # Required modules
 dependencies:
   # contrib from Lightning
-  - diff
   - entity_browser_entity_form
   - features
   - features_ui
   - field_group
   - page_manager_ui
-  # Lightning modules
-  - lightning_core
-  - lightning_layout
-  - lightning_media
   ### octane contrib
   # - media entities
   - lightning_media_document
@@ -28,7 +26,6 @@ dependencies:
   - lightning_media_instagram
   - lightning_media_twitter
   # - search
-  - search_api
   - facets
   - search_api_db
   - search_api_solr
