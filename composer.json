@@ -23,11 +23,11 @@
     "se/selenium-server-standalone": "^2.53",
     "phpunit/phpunit": "~4.8",
     "drush/drush": "^8",
-    "drupal/console": "~1.0.0",
+    "drupal/console": "^1.0",
     "phpmd/phpmd": "~2.1",
     "drupal/admin_toolbar": "^1.18",
     "drupal/coder": "^8.2",
-    "drupal/devel": "^1.0.0-rc1",
+    "drupal/devel": "^1.0",
     "drupal/masquerade": "2.0.0-beta1",
     "symfony/css-selector": "~2.8"
   },
@@ -35,10 +35,10 @@
     "roave/security-advisories": "dev-master",
     "composer/installers": "^1.0",
     "drupal-composer/drupal-scaffold": "^2.0.0",
-    "cweagans/composer-patches": "~1.6",
-    "acquia/lightning": "~2.0.5",
+    "cweagans/composer-patches": "^1.6",
+    "acquia/lightning": "^2.1",
     "drupal/field_group": "^1.0",
-    "drupal/paragraphs": "1.x-dev",
+    "drupal/paragraphs": "^1.1",
     "drupal/restui": "^1.0",
     "drupal/search_api_solr": "1.x-dev",
     "drupal/search_api_page": "^1.0",
@@ -52,22 +52,16 @@
     "enable-patching": true,
     "patches": {
       "drupal/core": {
-        "2655104 - List unmet dependencies instead of just failing (Committed to 8.3.x)":
-          "https://www.drupal.org/files/issues/2655104-56.patch",
         "2699157 - Plugin Lazy loading can cause usort warning":
-          "https://www.drupal.org/files/issues/Iterating-through-array--2699157.patch",
+          "https://www.drupal.org/files/issues/2699157-23.drupal.Plugin-Lazy-loading-can-cause-usort-warning.patch",
         "2759397 - Patch EntityReferenceItemNormalizer to prevent recursion":
           "https://www.drupal.org/files/issues/2759397-1-entity_reference_recursion.patch",
         "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
-          "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
-        "2369119 - Fix error on exposed grouped filters on Views save":
-          "https://www.drupal.org/files/issues/2369119-120.patch"
+          "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch"
       },
       "drupal/paragraphs": {
-        "2725141 - Widget form is not collapsible when adding new items":
-          "https://www.drupal.org/files/issues/paragraphs-collapse-new-items-2725141-2.patch",
         "2788607 - Empty required fields not providing meaningful error messages":
-          "https://www.drupal.org/files/issues/empty_required_fields-2788607-37.patch"
+          "https://www.drupal.org/files/issues/empty_required_fields-2788607-52.patch"
       }
     },
     "installer-paths": {
