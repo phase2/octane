@@ -38,7 +38,7 @@
     "cweagans/composer-patches": "^1.6",
     "acquia/lightning": "^2.1",
     "drupal/field_group": "^1.0",
-    "drupal/paragraphs": "^1.1",
+    "drupal/paragraphs": "^1.2",
     "drupal/restui": "^1.0",
     "drupal/search_api_solr": "1.x-dev",
     "drupal/search_api_page": "^1.0",
@@ -58,10 +58,6 @@
           "https://www.drupal.org/files/issues/2759397-1-entity_reference_recursion.patch",
         "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
           "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch"
-      },
-      "drupal/paragraphs": {
-        "2788607 - Empty required fields not providing meaningful error messages":
-          "https://www.drupal.org/files/issues/empty_required_fields-2788607-52.patch"
       }
     },
     "installer-paths": {
