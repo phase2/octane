@@ -9,10 +9,14 @@
     {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
+    },
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
     }
   ],
   "require-dev": {
-    "behat/behat": "^3.0",
+    "behat/behat": "3.3.1",
     "behat/mink": "~1.7",
     "behat/mink-zombie-driver": "~1.2",
     "behat/mink-goutte-driver": "~1.2",
@@ -25,7 +29,7 @@
     "drush/drush": "^8",
     "drupal/console": "^1.0",
     "phpmd/phpmd": "~2.1",
-    "drupal/admin_toolbar": "^1.18",
+    "drupal/admin_toolbar": "^1.23",
     "drupal/coder": "^8.2",
     "drupal/devel": "^1.0",
     "drupal/masquerade": "2.0.0-beta1",
@@ -36,14 +40,18 @@
     "composer/installers": "^1.0",
     "drupal-composer/drupal-scaffold": "^2.0.0",
     "cweagans/composer-patches": "^1.6",
-    "acquia/lightning": "^2.1",
+    "acquia/lightning": "^3",
     "drupal/field_group": "^1.0",
     "drupal/paragraphs": "^1.2",
     "drupal/restui": "^1.0",
-    "drupal/search_api_solr": "1.x-dev",
+    "drupal/search_api_solr": "^1.2",
     "drupal/search_api_page": "^1.0",
-    "drupal/facets": "1.x-dev",
+    "drupal/facets": "^1.0",
     "drupal/components": "^1.0"
+  },
+  "conflict": {
+    "drupal/drupal": "*",
+    "behat/behat": ">= 3.4.0"
   },
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
@@ -57,7 +65,9 @@
         "2759397 - Patch EntityReferenceItemNormalizer to prevent recursion":
           "https://www.drupal.org/files/issues/2759397-1-entity_reference_recursion.patch",
         "2679775 - Fixes float issue with inline label fields (entity references on most cases).":
-          "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch"
+          "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch",
+        "2788777 - Allow a profile to be installed from existing config":
+          "https://www.drupal.org/files/issues/2788777-91.patch"
       }
     },
     "installer-paths": {
