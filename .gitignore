@@ -1,7 +1,43 @@
-.DS_Store
-bin/
-docroot/
-vendor/
-node_modules/
-bower_components/
-.sass-cache/
+# Files produced by bad patch & diff runs
+*~*~
+*.rej
+*.diff
+*.orig
+interdiff*.txt
+
+# Local caches.
+.sass-cache
+
+# IDE artifacts
+*~
+\#*\#
+*.swp
+.DS*
+._.DS*
+.project
+.idea
+
+# Upstream dependencies.
+vendor
+node_modules
+.bundle
+
+# Build output
+/build
+
+# Site Content
+/src/sites/*/files
+
+# Local Settings
+/src/sites/default/services.local.yml
+/src/sites/default/settings.local.php
+
+#NPM
+npm-debug.log
+
+# Drupal Console
+/console
+
+# Outrigger
+nhlbi-d8-sync.log
+.unison.*
