@@ -23,7 +23,7 @@
     "phase2/octane-dev": "dev-8.x-1.x"
   },
   "require": {
-    "acquia/lightning": "dev-8.x-4.x",
+    "acquia/lightning": "4.0.0-alpha2",
     "composer/installers": "^1.0",
     "cweagans/composer-patches": "^1.6",
     "drupal-composer/drupal-scaffold": "^2.0.0",
