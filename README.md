@@ -1,4 +1,4 @@
-# Octane Project
+# Octane
 This is a composer project used to spin up a starting instance of Drupal 8 Octane.
 Octane is a Drupal 8 project scaffold that provides the following features:
 * Uses the Acquia/Lightning distribution.
@@ -11,7 +11,7 @@ Octane is a Drupal 8 project scaffold that provides the following features:
 ## Installation
 To create a Drupal Octane project, use:
 ```$xslt
-composer create-project phase2/octane-project ProjectName
+composer create-project phase2/octane ProjectName
 ```
 
 ## Using Outrigger
