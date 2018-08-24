@@ -54,6 +54,9 @@
     "post-update-cmd": [
       "@drupal-scaffold",
       "@project-scaffold"
+    ],
+    "post-create-project-cmd": [
+      "./bin/get_particle.sh"
     ]
   },
   "extra": {
