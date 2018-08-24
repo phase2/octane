@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+## Rebuild your local codebase bring in database/configuration updates.
+
+# Rebuild the local codebase.
+fin blt source:build --no-interaction
+
+# Run database updates and import configuration.
+# Note that this runs WITHOUT --no-interaction, otherwise it can blow away
+# configuration that you want to keep locally without letting you say no.
+fin blt drupal:update

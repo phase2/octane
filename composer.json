@@ -27,18 +27,34 @@
     "composer/installers": "^1.0",
     "cweagans/composer-patches": "^1.6",
     "drupal-composer/drupal-scaffold": "^2.0.0",
+    "drupal/chosen": "^2.4",
     "drupal/components": "^1.0",
-    "drupal/facets": "1.x-dev",
+    "drupal/config_split": "^1.1",
     "drupal/field_group": "^1.0",
     "drupal/paragraphs": "^1.2",
+    "drupal/redirect": "^1.0@beta",
     "drupal/restui": "^1.0",
-    "drupal/search_api_solr": "1.x-dev",
+    "drupal/search_api_solr": "^2.1",
+    "drupal/twig_extender": "^2.0",
+    "drupal/twig_field_value": "^1.1",
+    "drupal/twig_tweak": "^1.9",
+    "harvesthq/chosen": "^1.7",
+    "kporras07/composer-symlinks": "^0.1.0@dev",
     "roave/security-advisories": "dev-master"
   },
   "scripts": {
     "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
-    "post-install-cmd": "@composer drupal-scaffold",
-    "post-update-cmd": "@composer drupal-scaffold"
+    "project-scaffold": [
+      "Kporras07\\ComposerSymlinks\\ScriptHandler::createSymlinks"
+    ],
+    "post-install-cmd": [
+      "@drupal-scaffold",
+      "@project-scaffold"
+    ],
+    "post-update-cmd": [
+      "@drupal-scaffold",
+      "@project-scaffold"
+    ]
   },
   "extra": {
     "enable-patching": true,
@@ -72,6 +88,17 @@
       "build/html/drush/contrib/{$name}": [
         "type:drupal-drush"
       ]
+    },
+    "symlinks": {
+      "src/modules": "build/html/modules/custom",
+      "src/themes": "build/html/themes/custom",
+      "src/profiles": "build/html/profiles/custom",
+      "src/libraries": "build/html/libraries/custom",
+      "src/sites/default": "build/html/sites/default",
+      "src/sites/settings.common.php": "build/html/sites/settings.common.php",
+      "src/sites/settings.common-client.php": "build/html/sites/settings.common-client.php",
+      "src/sites/settings.common-local.php": "build/html/sites/settings.common-local.php",
+      "src/sites/settings.memcache.php": "build/html/sites/settings.memcache.php"
     }
   }
 }

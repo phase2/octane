@@ -1,0 +1,16 @@
+#!/bin/bash
+
+## Run validation, like linting and code style checks, against staged files.
+
+#: exec_target = cli
+
+cd "$PROJECT_ROOT"
+
+LIST=$( git diff --name-only --cached --diff-filter=ACM )
+PHPCS_BIN=vendor/bin/phpcs
+
+echo "Executing .git/hooks/pre-commit inside Docker..."
+/var/www/vendor/bin/blt internal:git-hook:execute:pre-commit "${LIST}"
+
+# Return the status of the last run command.
+exit $?
