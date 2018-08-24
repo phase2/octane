@@ -5,12 +5,16 @@
   "license": "GPL-2.0+",
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "repositories": [
-    {
+  "repositories": {
+    "drupal": {
       "type": "composer",
       "url": "https://packages.drupal.org/8"
+    },
+    "assets": {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
     }
-  ],
+  },
   "require-dev": {
     "phase2/octane-dev": "dev-8.x-1.x"
   },
@@ -29,7 +33,9 @@
     "drupal/components": "^1.0"
   },
   "scripts": {
-    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold"
+    "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
+    "post-install-cmd": "@composer drupal-scaffold",
+    "post-update-cmd": "@composer drupal-scaffold"
   },
   "extra": {
     "enable-patching": true,
@@ -43,6 +49,10 @@
           "https://www.drupal.org/files/issues/2679775-11-inline-labels.patch"
       }
     },
+    "installer-types": [
+      "bower-asset",
+      "npm-asset"
+    ],
     "installer-paths": {
       "build/html/core": [
         "type:drupal-core"
