@@ -76,7 +76,7 @@
       "@project-scaffold"
     ],
     "post-create-project-cmd": [
-      "./bin/get_particle.sh"
+      "npx phase2/create-particle src/themes/particle"
     ]
   },
   "extra": {
