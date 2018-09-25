@@ -43,7 +43,7 @@
     "symfony/debug": "^3.4.0"
   },
   "require": {
-    "acquia/lightning": "4.0.0-alpha3",
+    "acquia/lightning": "dev-8.x-4.x",
     "composer/installers": "^1.0",
     "cweagans/composer-patches": "^1.6",
     "drupal-composer/drupal-scaffold": "^2.0.0",
