@@ -5,6 +5,9 @@ DOCROOT_PATH="${PROJECT_ROOT}/${DOCROOT}"
 # Initialize stack.
 fin project start
 
+# Install Particle theme
+fin exec npx phase2/create-particle src/themes/particle
+
 # Install project requirements.
 fin composer clear-cache
 fin exec COMPOSER_PROCESS_TIMEOUT=2000
