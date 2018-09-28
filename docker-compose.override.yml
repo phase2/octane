@@ -1,0 +1,25 @@
+##
+# Local development override for docker-compose.yml.
+#
+# This file replaces the standard volume mount that shares code into the docker
+# container with the Outrigger unison filesystem sync.
+#
+# Run 'rig project sync' to start syncing.
+# @see http://docs.outrigger.sh/project-setup/filesystem-sync/
+#
+# This configuration is automatically applied when you use the implicit default
+# docker-compose.yml configuration file (e.g., when you **do not** specify the
+# -f flag.)
+#
+# To skip including this configuration, run 'docker-compose -f docker-compose.yml ...'
+##
+version: '2.1'
+
+services:
+  www:
+    volumes:
+      - PROJECTNAME-sync:/var/www
+
+volumes:
+  PROJECTNAME-sync:
+    external: true

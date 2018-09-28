@@ -1,0 +1,109 @@
+##
+# This is an Outrigger configuration file used by rig project commands.
+##
+
+version: 1.0
+
+# This is prepended to the $PATH for any commands referenced in the scripts section.
+bin: ./bin:./node_modules/.bin:./vendor/bin
+
+# This is not currently used but we include it in anticipation of great things.
+project: PROJECTNAME
+
+# Project Scripts
+# These can be run via 'rig project run:<key>'
+# If you specify an alias, you can run 'rig project <alias>'
+scripts:
+
+  run:
+    alias: run
+    description: Run one of the build container services such as 'cli' or 'drush'.
+    run:
+      - docker-compose -f $PWD/build.yml run --rm
+
+  init:
+    alias: init
+    description: Run the end-to-end repository initialization and site install script.
+    run:
+      - rig project run:welcome
+      - rig project up
+      - docker-compose -f $PWD/build.yml run --rm cli /var/www/bin/init.sh
+
+  up:
+    alias: up
+    description: Start up operational docker containers and filesystem sync.
+    run:
+      - rig project sync:start
+      - docker-compose up -d
+
+  stop:
+    alias: stop
+    description: Halt operational containers and filesystem sync.
+    run:
+      - docker-compose stop
+      - rig project sync:stop
+
+  build:
+    alias: build
+    description: Run the end-to-end build process.
+    run:
+      - docker-compose -f build.yml run --rm grunt
+
+  theme:
+    alias: theme
+    description: Compile all theme assets, activate watch, and start up pattern-lab.
+    run:
+      - docker-compose -f build.yml run --rm theme
+
+  npm:
+    alias: npm
+    description: Run npm install for theme.
+    run:
+      - docker-compose -f build.yml run --rm npm install
+
+  install:
+    alias: install
+    description: Install the Drupal site.
+    run:
+      - docker-compose -f build.yml run --rm grunt install
+
+  fix-permissions:
+    alias: fix-perms
+    description: Fix permissions for Apache to run code and access files. (Automatically run as part of rig project install.)
+    run:
+      - docker-compose exec www /var/www/bin/fix-perms.sh
+
+  ps:
+    description: Get a list of all containers associated with this project. Unlike docker-compose ps, this will include all containers even for different configuration files.
+    run:
+      - docker ps -a --filter "label=outrigger.project=PROJECTNAME"
+
+  all-stop:
+    description: Halt all containers associated with this project.
+    run:
+      - rig project run:ps -- -q | xargs docker stop
+
+  logs:
+    alias: logs
+    description: Stream the logs produced by your Docker project containers. To limit output add '--tail=20'.
+    run:
+      - docker-compose logs -ft
+
+  welcome:
+    alias: tour
+    description: Codebase orientation.
+    run:
+      - echo 'Welcome to the Project!'
+      - echo 'Please review the README.md, CONTRIBUTING.md, TODOS.md, and the docs/ folder.'
+      - echo 'All custom code is under src/'
+      - echo 'To get started, run "rig project init"'
+
+# This controls configuration for the `project sync:start` command.
+sync:
+  # This is the name of the external volume to use.
+  volume: PROJECTNAME-sync
+  # These ignores will be added to unison and not synced between local and project volume
+  ignore:
+  #  - "Path vendor"
+  #  - "Name node_modules"
+    - "Name .idea"

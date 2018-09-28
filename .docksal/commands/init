@@ -5,25 +5,7 @@ DOCROOT_PATH="${PROJECT_ROOT}/${DOCROOT}"
 # Initialize stack.
 fin project start
 
-# Install Particle theme
-fin exec npx phase2/create-particle src/themes/particle
-
-# Install project requirements.
-fin composer clear-cache
-fin exec COMPOSER_PROCESS_TIMEOUT=2000
-fin composer install
-
-# Install site
-fin drush si --db-url=mysql://user:user@db/drupal_octane minimal
-
-# Set up BLT.
-#cd $DOCROOT_PATH
-#fin blt setup
-
-# Manually set username and password for the admin user.
-# @see https://github.com/acquia/blt/issues/2984.
-fin drush sql:query "UPDATE users_field_data SET name = 'admin' WHERE uid = 1;"
-fin drush user:password admin "admin"
+${PROJECT_ROOT}/bin/init.sh
 
 # Repeat here just to show the site URL when we are done.
 fin project start

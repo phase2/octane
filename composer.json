@@ -68,12 +68,12 @@
       "Kporras07\\ComposerSymlinks\\ScriptHandler::createSymlinks"
     ],
     "post-install-cmd": [
-      "@drupal-scaffold",
-      "@project-scaffold"
+      "@project-scaffold",
+      "@drupal-scaffold"
     ],
     "post-update-cmd": [
-      "@drupal-scaffold",
-      "@project-scaffold"
+      "@project-scaffold",
+      "@drupal-scaffold"
     ]
   },
   "extra": {
