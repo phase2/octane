@@ -20,8 +20,8 @@ services:
     environment:
       # override the default database name
       MYSQL_DATABASE: drupal_octane
-      MYSQL_PASSWORD: user
-      MYSQL_USER: user
+      MYSQL_PASSWORD: admin
+      MYSQL_USER: admin
 
 # Optional Memcached service.
 # Uncomment if needed (or replace with Redis)
