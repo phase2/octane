@@ -6,23 +6,21 @@ version: '2.1'
 services:
   # Database service
   db:
-    container_name: PROJECTNAME_${DOCKER_ENV:-local}_db
+    container_name: ${PROJECT_ROOT:-project}_${DOCKER_ENV:-local}_db
     image: outrigger/mariadb:10.1
     environment:
       MYSQL_DATABASE: drupal_octane
-      MYSQL_PASSWORD: user
-      MYSQL_USER: user
     volumes:
-      - /data/PROJECTNAME/${DOCKER_ENV:-local}/mysql:/var/lib/mysql
+      - /data/${PROJECT_ROOT:-project}/${DOCKER_ENV:-local}/mysql:/var/lib/mysql
     network_mode: "bridge"
     labels:
       com.dnsdock.name: db
-      com.dnsdock.image: PROJECTNAME
-      outrigger.project: PROJECTNAME
+      com.dnsdock.image: ${PROJECT_ROOT:-project}
+      outrigger.project: ${PROJECT_ROOT:-project}
 
   # Main Application service.
   www:
-    container_name: PROJECTNAME_${DOCKER_ENV:-local}_www
+    container_name: ${PROJECT_ROOT:-project}_${DOCKER_ENV:-local}_www
     image: outrigger/apache-php:php71
     network_mode: "bridge"
     environment:
@@ -39,8 +37,8 @@ services:
       # Main code volume mount.
       - .:/var/www
       # /var/www/src is used for consistency with the build container.
-      - /data/PROJECTNAME/${DOCKER_ENV:-local}/files:/var/www/src/sites/default/files
+      - /data/${PROJECT_ROOT:-project}/${DOCKER_ENV:-local}/files:/var/www/src/sites/default/files
     labels:
       com.dnsdock.name: www
-      com.dnsdock.image: PROJECTNAME
-      outrigger.project: PROJECTNAME
+      com.dnsdock.image: ${PROJECT_ROOT:-project}
+      outrigger.project: ${PROJECT_ROOT:-project}

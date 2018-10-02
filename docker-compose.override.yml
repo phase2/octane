@@ -18,8 +18,9 @@ version: '2.1'
 services:
   www:
     volumes:
-      - PROJECTNAME-sync:/var/www
+      - rig-sync-volume:/var/www
 
 volumes:
-  PROJECTNAME-sync:
+  rig-sync-volume:
+    name: ${PROJECT_ROOT:-project}-sync
     external: true

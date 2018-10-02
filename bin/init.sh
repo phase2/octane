@@ -12,7 +12,7 @@ export COMPOSER_PROCESS_TIMEOUT=2000
 composer install
 
 # Install site
-drush si --db-url=mysql://user:user@db/drupal_octane minimal
+drush si --db-url=mysql://admin:admin@db/drupal_octane minimal
 
 # Manually set username and password for the admin user.
 # @see https://github.com/acquia/blt/issues/2984.

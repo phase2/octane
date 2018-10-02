@@ -12,7 +12,7 @@ services:
     environment:
       # Enable command line debugging
       PHP_XDEBUG: "true"
-      PHP_IDE_CONFIG: "serverName=www.PROJECTNAME.vm"
+      PHP_IDE_CONFIG: "serverName=www.${PROJECT_ROOT:-project}.vm"
     command: /bin/bash
 
   # Container for running composer in the repo root.
@@ -29,7 +29,7 @@ services:
   drush:
     extends:
       service: operational
-    entrypoint: [ "/init", "drush", "@PROJECTNAME" ]
+    entrypoint: [ "/init", "drush", "@${PROJECT_ROOT:-project}" ]
     working_dir: /var/www/build/html
 
   # Container for running Drupal Console in the docroot.
@@ -42,7 +42,7 @@ services:
     entrypoint: [ "/init", "/var/www/vendor/bin/drupal", "--ansi" ]
     working_dir: /var/www/build/html
 
-  
+
   # Container to get Pattern Lab compiled, running, and watched from inside the theme folder in one step.
   # Usage: docker-compose -f build.yml run --rm theme
   # Note: For faster file-watching, run: rig watch src/themes/themeName after Pattern Lab builds.
@@ -52,7 +52,7 @@ services:
       service: base
     labels:
       com.dnsdock.name: theme
-      com.dnsdock.image: PROJECTNAME
+      com.dnsdock.image: ${PROJECT_ROOT:-project}
     working_dir: /var/www/src/themes/particle
     entrypoint: [ "/init", "./node_modules/.bin/gulp" ]
     command: ""
@@ -92,7 +92,7 @@ services:
     extends:
       service: base
     external_links:
-      - PROJECTNAME_${DOCKER_ENV:-local}_db:db
+      - ${PROJECT_ROOT:-project}_${DOCKER_ENV:-local}_db:db
     # Unset the bin/bash command used by base and cli.
     command: ""
 
@@ -117,7 +117,7 @@ services:
     volumes:
       # Use 'rig project sync' to leverage unison-based filesystem for app code.
       # @see <doc-url>
-      - PROJECTNAME-sync:/var/www
+      - rig-sync-volume:/var/www
       # /var/www/src is used here rather than /var/www/build/html to
       # prevent the grunt clean:default task from encountering an error
       # because docker won't let the files directory be removed as the
@@ -126,7 +126,7 @@ services:
       # successfully cleaned without then needing to touch the files
       # directory. This mount is present so that drush and other build
       # container operations can operate on the files for a site.
-      - /data/PROJECTNAME/${DOCKER_ENV:-local}/files:/var/www/src/sites/default/files
+      - /data/${PROJECT_ROOT:-project}/${DOCKER_ENV:-local}/files:/var/www/src/sites/default/files
       # By volume mounting project Drush configuration to the user profile the
       # Docker image can carry Drush configuration and commands itself.
       # Would be more clean if this volume mount placed the Drush configuration
@@ -137,21 +137,21 @@ services:
       - ./build/backups:/opt/backups
       # Persist the cache directories associated with various tools.
       # The first volume mount covers: npm, composer, bower, fontconfig, & yarn
-      - /data/PROJECTNAME/cache:/root/.cache
-      - /data/PROJECTNAME/cache/drush:/root/.drush/cache
-      - /data/PROJECTNAME/cache/behat_gherkin:/tmp/behat_gherkin_cache
+      - /data/${PROJECT_ROOT:-project}/cache:/root/.cache
+      - /data/${PROJECT_ROOT:-project}/cache/drush:/root/.drush/cache
+      - /data/${PROJECT_ROOT:-project}/cache/behat_gherkin:/tmp/behat_gherkin_cache
       # SSH key grants read access to private Git repositories.
       - ~/.ssh/${OUTRIGGER_SSH_KEY:-id_rsa}:/root/.ssh/outrigger.key
       # Preserve BASH history across build container runs.
-      - /data/PROJECTNAME/${DOCKER_ENV:-local}/bash:/root/bash
+      - /data/${PROJECT_ROOT:-project}/${DOCKER_ENV:-local}/bash:/root/bash
     labels:
-      outrigger.project: PROJECTNAME
+      outrigger.project: ${PROJECT_ROOT:-project}
     environment:
-      APP_DOMAIN: www.PROJECTNAME.vm
-      GDT_DOMAIN: www.PROJECTNAME.vm
+      APP_DOMAIN: www.${PROJECT_ROOT:-project}.vm
+      GDT_DOMAIN: www.${PROJECT_ROOT:-project}.vm
       # Check https://hub.docker.com/r/outrigger/build/ for other Node version options.
       NODE_VERSION: 8
-      
+
       # Allow for pattern lab compilation need detection with reasonable performance from
       # within the build container.
       # See: https://github.com/paulmillr/chokidar/blob/master/README.md#user-content-performance
@@ -172,7 +172,7 @@ services:
 
       # PHPUnit variables.
       SIMPLETEST_DB: mysql://admin:admin@db/drupal_octane
-      SIMPLETEST_URL: www.PROJECTNAME.vm
+      SIMPLETEST_URL: www.${PROJECT_ROOT:-project}.vm
       BROWSERTEST_OUTPUT_DIRECTORY: /tmp
 
       # Composer variables.
@@ -182,5 +182,6 @@ volumes:
   # This defines the filesystem synchronization volume used for application
   # code by the web container.
   # @see <doc-url>
-  PROJECTNAME-sync:
+  rig-sync-volume:
+    name: ${PROJECT_ROOT:-project}-sync
     external: true

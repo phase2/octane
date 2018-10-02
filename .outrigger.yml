@@ -8,7 +8,9 @@ version: 1.0
 bin: ./bin:./node_modules/.bin:./vendor/bin
 
 # This is not currently used but we include it in anticipation of great things.
-project: PROJECTNAME
+# Usually should be the same as the project directory.
+# Also set this in .env file and use all lower-case names.
+project: project
 
 # Project Scripts
 # These can be run via 'rig project run:<key>'
@@ -21,13 +23,20 @@ scripts:
     run:
       - docker-compose -f $PWD/build.yml run --rm
 
-  init:
-    alias: init
+  setup:
+    alias: setup
     description: Run the end-to-end repository initialization and site install script.
     run:
+      - sed -i '' "s%^PROJECT_ROOT.*%PROJECT_ROOT=${PWD##*/}%" .env
       - rig project run:welcome
       - rig project up
       - docker-compose -f $PWD/build.yml run --rm cli /var/www/bin/init.sh
+
+  init:
+    alias: init
+    description: Alternate alias for "rig project setup"
+    run:
+      - rig project init
 
   up:
     alias: up
@@ -35,6 +44,11 @@ scripts:
     run:
       - rig project sync:start
       - docker-compose up -d
+
+  start:
+    alias: start
+    description: Alternate alias for "rig project up"
+      - rig project up
 
   stop:
     alias: stop
@@ -76,7 +90,7 @@ scripts:
   ps:
     description: Get a list of all containers associated with this project. Unlike docker-compose ps, this will include all containers even for different configuration files.
     run:
-      - docker ps -a --filter "label=outrigger.project=PROJECTNAME"
+      - docker ps -a --filter "label=outrigger.project=PROJECT_ROOT"
 
   all-stop:
     description: Halt all containers associated with this project.
@@ -101,7 +115,11 @@ scripts:
 # This controls configuration for the `project sync:start` command.
 sync:
   # This is the name of the external volume to use.
-  volume: PROJECTNAME-sync
+  # Will default to the directory name.  If you change it here, also change
+  # the PROJECT_ROOT environment variable in .env file.
+  #
+  # volume: PROJECT_ROOT-sync
+  #
   # These ignores will be added to unison and not synced between local and project volume
   ignore:
   #  - "Path vendor"
