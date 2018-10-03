@@ -75,8 +75,8 @@ variables or db container configuration.
 
 ### Build/CLI Container
 One of the main priciples of Octane is to minimize the number of tools installed
-on your local computer and instead perform most tasks within a docker "build"
-container that contains all the tools.
+on your local computer (only Composer) and instead perform most tasks within a 
+docker "build" container that contains all the tools.
 
 In Outrigger, this Build container is defined in the ``build.yml`` docker-compose
 file. Various application specific containers are build on the "base" container

@@ -8,8 +8,7 @@ npx phase2/create-particle src/themes/particle
 
 # Install project requirements.
 composer clear-cache
-export COMPOSER_PROCESS_TIMEOUT=2000
-composer install
+COMPOSER_PROCESS_TIMEOUT=2000 COMPOSER_DISCARD_CHANGES=1 composer install
 
 # Install site
 drush si --db-url=mysql://admin:admin@db/drupal_octane minimal
