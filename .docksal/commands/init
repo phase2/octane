@@ -1,14 +1,13 @@
 #!/usr/bin/env bash
 #
 # Causes this script to run inside the docksal cli container.
-#: exec_target = cli
 
 DOCROOT_PATH="${PROJECT_ROOT}/${DOCROOT}"
 
 # Initialize stack.
 fin project start
 
-${PROJECT_ROOT}/bin/init.sh
+fin exec ${PROJECT_ROOT}/bin/init.sh
 
 # Repeat here just to show the site URL when we are done.
 fin project start
