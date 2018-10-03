@@ -22,5 +22,5 @@ services:
 
 volumes:
   rig-sync-volume:
-    name: ${PROJECT_ROOT:-project}-sync
+    name: ${PROJECT_ROOT}-sync
     external: true

@@ -1,5 +1,7 @@
 ##
 # Build and command-line operations containers for your local environment.
+#
+# Environment variables can be overridden in the .env file.
 ##
 version: '2.1'
 
@@ -12,7 +14,7 @@ services:
     environment:
       # Enable command line debugging
       PHP_XDEBUG: "true"
-      PHP_IDE_CONFIG: "serverName=www.${PROJECT_ROOT:-project}.vm"
+      PHP_IDE_CONFIG: "serverName=www.${PROJECT_ROOT}.vm"
     command: /bin/bash
 
   # Container for running composer in the repo root.
@@ -29,7 +31,7 @@ services:
   drush:
     extends:
       service: operational
-    entrypoint: [ "/init", "drush", "@${PROJECT_ROOT:-project}" ]
+    entrypoint: [ "/init", "drush", "@${PROJECT_ROOT}" ]
     working_dir: /var/www/build/html
 
   # Container for running Drupal Console in the docroot.
@@ -52,7 +54,7 @@ services:
       service: base
     labels:
       com.dnsdock.name: theme
-      com.dnsdock.image: ${PROJECT_ROOT:-project}
+      com.dnsdock.image: ${PROJECT_ROOT}
     working_dir: /var/www/src/themes/particle
     entrypoint: [ "/init", "./node_modules/.bin/gulp" ]
     command: ""
@@ -92,7 +94,7 @@ services:
     extends:
       service: base
     external_links:
-      - ${PROJECT_ROOT:-project}_${DOCKER_ENV:-local}_db:db
+      - ${PROJECT_ROOT}_${DOCKER_ENV}_db:db
     # Unset the bin/bash command used by base and cli.
     command: ""
 
@@ -126,7 +128,7 @@ services:
       # successfully cleaned without then needing to touch the files
       # directory. This mount is present so that drush and other build
       # container operations can operate on the files for a site.
-      - /data/${PROJECT_ROOT:-project}/${DOCKER_ENV:-local}/files:/var/www/src/sites/default/files
+      - /data/${PROJECT_ROOT}/${DOCKER_ENV}/files:/var/www/src/sites/default/files
       # By volume mounting project Drush configuration to the user profile the
       # Docker image can carry Drush configuration and commands itself.
       # Would be more clean if this volume mount placed the Drush configuration
@@ -137,18 +139,18 @@ services:
       - ./build/backups:/opt/backups
       # Persist the cache directories associated with various tools.
       # The first volume mount covers: npm, composer, bower, fontconfig, & yarn
-      - /data/${PROJECT_ROOT:-project}/cache:/root/.cache
-      - /data/${PROJECT_ROOT:-project}/cache/drush:/root/.drush/cache
-      - /data/${PROJECT_ROOT:-project}/cache/behat_gherkin:/tmp/behat_gherkin_cache
+      - /data/${PROJECT_ROOT}/cache:/root/.cache
+      - /data/${PROJECT_ROOT}/cache/drush:/root/.drush/cache
+      - /data/${PROJECT_ROOT}/cache/behat_gherkin:/tmp/behat_gherkin_cache
       # SSH key grants read access to private Git repositories.
       - ~/.ssh/${OUTRIGGER_SSH_KEY:-id_rsa}:/root/.ssh/outrigger.key
       # Preserve BASH history across build container runs.
-      - /data/${PROJECT_ROOT:-project}/${DOCKER_ENV:-local}/bash:/root/bash
+      - /data/${PROJECT_ROOT}/${DOCKER_ENV}/bash:/root/bash
     labels:
-      outrigger.project: ${PROJECT_ROOT:-project}
+      outrigger.project: ${PROJECT_ROOT}
     environment:
-      APP_DOMAIN: www.${PROJECT_ROOT:-project}.vm
-      GDT_DOMAIN: www.${PROJECT_ROOT:-project}.vm
+      APP_DOMAIN: www.${PROJECT_ROOT}.vm
+      GDT_DOMAIN: www.${PROJECT_ROOT}.vm
       # Check https://hub.docker.com/r/outrigger/build/ for other Node version options.
       NODE_VERSION: 8
 
@@ -162,7 +164,7 @@ services:
       # Suppress the loading of grunt-drupal-tasks desktop notification functionality.
       GDT_QUIET: 1
       # Include the DOCKER_ENV so Drupal settings can be aware of environment.
-      DOCKER_ENV: ${DOCKER_ENV:-local}
+      DOCKER_ENV: ${DOCKER_ENV}
       # Tell Drupal which environment.
       DRUPAL_ENV: "local"
       # Centralized build cache configuration.
@@ -172,7 +174,7 @@ services:
 
       # PHPUnit variables.
       SIMPLETEST_DB: mysql://admin:admin@db/drupal_octane
-      SIMPLETEST_URL: www.${PROJECT_ROOT:-project}.vm
+      SIMPLETEST_URL: www.${PROJECT_ROOT}.vm
       BROWSERTEST_OUTPUT_DIRECTORY: /tmp
 
       # Composer variables.
@@ -183,5 +185,5 @@ volumes:
   # code by the web container.
   # @see <doc-url>
   rig-sync-volume:
-    name: ${PROJECT_ROOT:-project}-sync
+    name: ${PROJECT_ROOT}-sync
     external: true

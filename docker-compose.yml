@@ -1,26 +1,28 @@
 ##
 # Operational services to run the application in your local Outrigger environment.
+#
+# Environment variables can be overridden in the .env file.
 ##
 version: '2.1'
 
 services:
   # Database service
   db:
-    container_name: ${PROJECT_ROOT:-project}_${DOCKER_ENV:-local}_db
+    container_name: ${PROJECT_ROOT}_${DOCKER_ENV}_db
     image: outrigger/mariadb:10.1
     environment:
       MYSQL_DATABASE: drupal_octane
     volumes:
-      - /data/${PROJECT_ROOT:-project}/${DOCKER_ENV:-local}/mysql:/var/lib/mysql
+      - /data/${PROJECT_ROOT}/${DOCKER_ENV}/mysql:/var/lib/mysql
     network_mode: "bridge"
     labels:
       com.dnsdock.name: db
-      com.dnsdock.image: ${PROJECT_ROOT:-project}
-      outrigger.project: ${PROJECT_ROOT:-project}
+      com.dnsdock.image: ${PROJECT_ROOT}
+      outrigger.project: ${PROJECT_ROOT}
 
   # Main Application service.
-  www:
-    container_name: ${PROJECT_ROOT:-project}_${DOCKER_ENV:-local}_www
+  web:
+    container_name: ${PROJECT_ROOT}_${DOCKER_ENV}_web
     image: outrigger/apache-php:php71
     network_mode: "bridge"
     environment:
@@ -28,17 +30,19 @@ services:
       PHP_MAX_EXECUTION_TIME: 60
       PHP_XDEBUG: "true"
       # Include the DOCKER_ENV so Drupal settings can be aware of environment.
-      DOCKER_ENV: ${DOCKER_ENV:-local}
+      DOCKER_ENV: ${DOCKER_ENV}
       # Tell Drupal which environment.
       DRUPAL_ENV: "local"
     links:
       - db
     volumes:
       # Main code volume mount.
+      # NFS used by default. The docker-composer.override will override this
+      # with a unison sync volume for local.
       - .:/var/www
       # /var/www/src is used for consistency with the build container.
-      - /data/${PROJECT_ROOT:-project}/${DOCKER_ENV:-local}/files:/var/www/src/sites/default/files
+      - /data/${PROJECT_ROOT}/${DOCKER_ENV}/files:/var/www/src/sites/default/files
     labels:
       com.dnsdock.name: www
-      com.dnsdock.image: ${PROJECT_ROOT:-project}
-      outrigger.project: ${PROJECT_ROOT:-project}
+      com.dnsdock.image: ${PROJECT_ROOT}
+      outrigger.project: ${PROJECT_ROOT}

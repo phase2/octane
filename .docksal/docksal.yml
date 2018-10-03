@@ -7,14 +7,14 @@ services:
       - io.docksal.virtual-port=3000
     environment:
       # Include the DOCKER_ENV so Drupal settings can be aware of environment.
-      DOCKER_ENV: ${DOCKER_ENV:-local}
+      DOCKER_ENV: ${DOCKER_ENV}
       # Adjust IDE Config for xdebug to work on command line PHP scripts.
       PHP_IDE_CONFIG: serverName=${VIRTUAL_HOST}
 
   web:
     environment:
       # Include the DOCKER_ENV so Drupal settings can be aware of environment.
-      DOCKER_ENV: ${DOCKER_ENV:-local}
+      DOCKER_ENV: ${DOCKER_ENV}
 
   db:
     environment:

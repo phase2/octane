@@ -1,6 +1,3 @@
 #!/usr/bin/env bash
 
-## Watch for Pattern Lab theme changes and re-compile.
-
-cd ${PROJECT_ROOT}/docroot/themes/custom/particle
-fin run npm run dev:pl
+${PROJECT_ROOT}/bin/theme.sh

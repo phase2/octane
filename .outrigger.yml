@@ -23,11 +23,19 @@ scripts:
     run:
       - docker-compose -f $PWD/build.yml run --rm
 
+  bash:
+    alias: bash
+    description: Open a bash shell in the CLI container.
+    run:
+      - docker-compose -f $PWD/build.yml run --rm cli
+
   setup:
     alias: setup
     description: Run the end-to-end repository initialization and site install script.
     run:
+      # Set the PROJECT_ROOT environment variable to the current directory
       - sed -i '' "s%^PROJECT_ROOT.*%PROJECT_ROOT=${PWD##*/}%" .env
+      # Start containers and setup the site
       - rig project run:welcome
       - rig project up
       - docker-compose -f $PWD/build.yml run --rm cli /var/www/bin/init.sh
@@ -57,40 +65,28 @@ scripts:
       - docker-compose stop
       - rig project sync:stop
 
-  build:
-    alias: build
+  rebuild:
+    alias: rebuild
     description: Run the end-to-end build process.
     run:
-      - docker-compose -f build.yml run --rm grunt
+      - docker-compose -f $PWD/build.yml run --rm cli /var/www/bin/rebuild.sh
 
   theme:
     alias: theme
     description: Compile all theme assets, activate watch, and start up pattern-lab.
     run:
-      - docker-compose -f build.yml run --rm theme
+      - docker-compose -f $PWD/build.yml run --rm cli /var/www/bin/theme.sh
 
   npm:
     alias: npm
     description: Run npm install for theme.
     run:
-      - docker-compose -f build.yml run --rm npm install
-
-  install:
-    alias: install
-    description: Install the Drupal site.
-    run:
-      - docker-compose -f build.yml run --rm grunt install
-
-  fix-permissions:
-    alias: fix-perms
-    description: Fix permissions for Apache to run code and access files. (Automatically run as part of rig project install.)
-    run:
-      - docker-compose exec www /var/www/bin/fix-perms.sh
+      - docker-compose -f $PWD/build.yml run --rm npm install
 
   ps:
     description: Get a list of all containers associated with this project. Unlike docker-compose ps, this will include all containers even for different configuration files.
     run:
-      - docker ps -a --filter "label=outrigger.project=PROJECT_ROOT"
+      - docker ps -a --filter "label=outrigger.project=${PROJECT_ROOT}"
 
   all-stop:
     description: Halt all containers associated with this project.
