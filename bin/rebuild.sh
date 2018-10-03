@@ -2,8 +2,6 @@
 #
 # Rebuild the site and theme.  Used after doing "git pull" as part of
 # daily workflow.
-#
-#: exec_target = cli
 
 CURRENT_DIR=${PWD}
 

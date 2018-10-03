@@ -1,7 +1,4 @@
 #!/usr/bin/env bash
-#
-# Causes this script to run inside the docksal cli container.
-#: exec_target = cli
 
 # Install Particle theme
 npx phase2/create-particle src/themes/particle
