@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 
-# Install Particle theme
-npx phase2/create-particle src/themes/particle
+THEME_PATH="src/themes/particle"
+# Only download particle theme if it doesn't already exist.
+if [ ! -e ${THEME_PATH} ]; then
+  # Install latest Particle theme
+  npx phase2/create-particle ${THEME_PATH}
+fi
 
 # Install project requirements.
 composer clear-cache
