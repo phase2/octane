@@ -3,4 +3,4 @@
 # Causes this script to run inside the docksal cli container.
 #: exec_target = cli
 
-${DOCROOT}/bin/rebuild.sh
+bin/rebuild.sh
