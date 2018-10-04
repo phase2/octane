@@ -16,7 +16,7 @@
 version: '2.1'
 
 services:
-  www:
+  web:
     volumes:
       - rig-sync-volume:/var/www
 
