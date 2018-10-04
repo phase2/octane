@@ -26,7 +26,7 @@ drush config-import -y
 drush cr
 
 # Build the theme
-cd src/themes/particle && npm npm run build:drupal
+cd src/themes/particle && npm run build:drupal
 
 cd ${CURRENT_DIR}
 # final cache clear
