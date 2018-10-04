@@ -44,7 +44,7 @@ scripts:
     alias: init
     description: Alternate alias for "rig project setup"
     run:
-      - rig project init
+      - rig project setup
 
   up:
     alias: up
@@ -56,6 +56,7 @@ scripts:
   start:
     alias: start
     description: Alternate alias for "rig project up"
+    run:
       - rig project up
 
   stop:
