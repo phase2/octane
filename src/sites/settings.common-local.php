@@ -24,7 +24,7 @@ $config['system.performance']['js']['preprocess'] = FALSE;
 $config['system.performance']['cache.page.max_age'] = 0;
 
 // Dev services.
-$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.local.services.yml';
+$settings['container_yamls'][] = DRUPAL_ROOT . '/sites/development.services.yml';
 
 // Disable render cache.
 $settings['cache']['bins']['render'] = 'cache.backend.null';
