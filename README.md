@@ -18,6 +18,11 @@ the files needed to build your Drupal project using the Octane templates.
 The ``projectname`` should be all lowercase and will become the hostname of
 your local Drupal site.
 
+NOTE: If you do not have ``composer`` installed locally, you can also simply
+clone this git repository into a new directory and then initialize your
+project as shown below. This will run the initial ``composer install`` from within the
+docker build/cli container.
+
 ## Using Outrigger
 
 If you are using [Outrigger](http://docs.outrigger.sh/) for local development, perform the initial site setup using:
