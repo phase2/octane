@@ -5,6 +5,8 @@ services:
       # Set host and port of CLI container for Pattern Lab.
       - io.docksal.virtual-host=design.${VIRTUAL_HOST}
       - io.docksal.virtual-port=8080
+    expose:
+      - "8080"
     environment:
       # Include the DOCKER_ENV so Drupal settings can be aware of environment.
       DOCKER_ENV: ${DOCKER_ENV}
