@@ -76,7 +76,7 @@ scripts:
     alias: theme
     description: Compile all theme assets, activate watch, and start up pattern-lab.
     run:
-      - docker-compose -f $PWD/build.yml run --rm cli /var/www/bin/theme.sh
+      - docker-compose -f $PWD/build.yml run --rm theme
 
   npm:
     alias: npm

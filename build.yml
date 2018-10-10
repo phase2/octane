@@ -53,10 +53,12 @@ services:
     extends:
       service: base
     labels:
-      com.dnsdock.name: theme
+      com.dnsdock.name: design
       com.dnsdock.image: ${PROJECT_ROOT}
-    working_dir: /var/www/src/themes/particle
-    entrypoint: [ "/init", "./node_modules/.bin/gulp" ]
+    environment:
+      # Tell Particle the host name
+      PARTICLE_PL_HOST: "design.${PROJECT_ROOT}.vm:8080"
+    entrypoint: [ "/init", "/var/www/bin/theme.sh" ]
     command: ""
 
   # Container to run npm within the theme folder.

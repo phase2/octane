@@ -105,6 +105,9 @@
       "build/html/themes/contrib/{$name}": [
         "type:drupal-theme"
       ],
+      "src/themes/{$name}": [
+        "type:drupal-custom-theme"
+      ],
       "build/html/drush/contrib/{$name}": [
         "type:drupal-drush"
       ]
