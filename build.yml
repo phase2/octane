@@ -3,7 +3,7 @@
 #
 # Environment variables can be overridden in the .env file.
 ##
-version: '2.1'
+version: "2.1"
 
 services:
   # Container for starting a cli for build commands
@@ -22,7 +22,7 @@ services:
   composer:
     extends:
       service: base
-    entrypoint: [ "/init", "composer", "--ansi" ]
+    entrypoint: ["/init", "composer", "--ansi"]
     command: ""
 
   # Container for running drush in the docroot.
@@ -31,7 +31,7 @@ services:
   drush:
     extends:
       service: operational
-    entrypoint: [ "/init", "drush", "@${PROJECT_ROOT}" ]
+    entrypoint: ["/init", "drush"]
     working_dir: /var/www/build/html
 
   # Container for running Drupal Console in the docroot.
@@ -41,9 +41,8 @@ services:
   drupal:
     extends:
       service: operational
-    entrypoint: [ "/init", "/var/www/vendor/bin/drupal", "--ansi" ]
+    entrypoint: ["/init", "/var/www/vendor/bin/drupal", "--ansi"]
     working_dir: /var/www/build/html
-
 
   # Container to get Pattern Lab compiled, running, and watched from inside the theme folder in one step.
   # Usage: docker-compose -f build.yml run --rm theme
@@ -58,7 +57,7 @@ services:
     environment:
       # Tell Particle the host name
       PARTICLE_PL_HOST: "design.${PROJECT_ROOT}.vm:8080"
-    entrypoint: [ "/init", "/var/www/bin/theme.sh" ]
+    entrypoint: ["/init", "/var/www/bin/theme.sh"]
     command: ""
 
   # Container to run npm within the theme folder.
@@ -67,7 +66,7 @@ services:
     extends:
       service: operational
     working_dir: /var/www/src/themes/particle
-    entrypoint: [ "/init", "npm" ]
+    entrypoint: ["/init", "npm"]
     command: ""
 
   # Container for running grunt in the repo root.
@@ -75,7 +74,7 @@ services:
   grunt:
     extends:
       service: operational
-    entrypoint: [ "/init", "grunt" ]
+    entrypoint: ["/init", "grunt"]
 
   # Container for running PHPUnit tests.
   # Usage: docker-compose -f build.yml run --rm phpunit <phpunit parameters>
@@ -83,7 +82,7 @@ services:
   phpunit:
     extends:
       service: operational
-    entrypoint: [ "/init", "/var/www/vendor/bin/phpunit" ]
+    entrypoint: ["/init", "/var/www/vendor/bin/phpunit"]
     working_dir: /var/www/build/html
 
   # Operational base service definition for Local environment.
@@ -115,7 +114,7 @@ services:
   base:
     image: outrigger/build:php71
     network_mode: "bridge"
-    entrypoint: [ "/init" ]
+    entrypoint: ["/init"]
     working_dir: /var/www
     command: /bin/bash
     volumes:
@@ -159,8 +158,9 @@ services:
       # Allow for pattern lab compilation need detection with reasonable performance from
       # within the build container.
       # See: https://github.com/paulmillr/chokidar/blob/master/README.md#user-content-performance
-      CHOKIDAR_USEPOLLING: 1
-            # Set to "true" to load xdebug configuration. Note this will cause significant composer
+      CHOKIDAR_USEPOLLING:
+        1
+        # Set to "true" to load xdebug configuration. Note this will cause significant composer
       # performance degradation.
       PHP_XDEBUG: "false"
       # Suppress the loading of grunt-drupal-tasks desktop notification functionality.
