@@ -38,7 +38,7 @@ scripts:
       # Start containers and setup the site
       - rig project run:welcome
       - rig project up
-      - docker-compose -f $PWD/build.yml run --rm cli /var/www/bin/init.sh
+      - docker-compose -f $PWD/build.yml run --rm cli /var/www/bin/init.sh "$@"
 
   init:
     alias: init

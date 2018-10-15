@@ -4,7 +4,7 @@
 fin project start
 
 # Run the common init script within the cli container.
-fin exec bin/init.sh
+fin exec bin/init.sh "$@"
 
 # Repeat here just to show the site URL when we are done.
 fin project start

@@ -10,6 +10,8 @@ if [ -z "$PROFILE" ]; then
   PROFILE="lightning"
 fi
 
+echo "Installing profile: ${PROFILE}"
+
 THEME_PATH="src/themes/particle"
 # Only download particle theme if it doesn't already exist.
 if [ ! -e ${THEME_PATH} ]; then
