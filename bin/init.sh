@@ -5,6 +5,10 @@ DB_URL="mysql://admin:admin@db/drupal_octane"
 
 # Optional profile name.  If omitted, install using existing config.
 PROFILE=$1
+if [ -z "$PROFILE" ]; then
+  # Default install profile is Acquia Lightning.
+  PROFILE="lightning"
+fi
 
 THEME_PATH="src/themes/particle"
 # Only download particle theme if it doesn't already exist.
@@ -22,9 +26,11 @@ composer clear-cache
 COMPOSER_PROCESS_TIMEOUT=2000 COMPOSER_DISCARD_CHANGES=1 composer install
 
 # Install Drupal site
-if [ -z "$PROFILE" ]; then
+if [ -e "src/config/default/system.site.yml" ]; then
+  # If config exists, install using it.
   drush si --db-url=${DB_URL} --existing-config -y
 else
+  # Otherwise install clean from profile.
   drush si --db-url==${DB_URL} -y ${PROFILE}
 fi
 
