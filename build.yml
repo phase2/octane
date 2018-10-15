@@ -155,12 +155,11 @@ services:
       GDT_DOMAIN: www.${PROJECT_ROOT}.vm
       # Check https://hub.docker.com/r/outrigger/build/ for other Node version options.
       NODE_VERSION: 8
-
       # Allow for pattern lab compilation need detection with reasonable performance from
       # within the build container.
       # See: https://github.com/paulmillr/chokidar/blob/master/README.md#user-content-performance
       CHOKIDAR_USEPOLLING: 1
-            # Set to "true" to load xdebug configuration. Note this will cause significant composer
+      # Set to "true" to load xdebug configuration. Note this will cause significant composer
       # performance degradation.
       PHP_XDEBUG: "false"
       # Suppress the loading of grunt-drupal-tasks desktop notification functionality.
