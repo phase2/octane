@@ -1,7 +1,20 @@
 #!/usr/bin/env bash
 
-# Database connection for drush.
+# Database connection for drush site-install.
 DB_URL='mysql://admin:admin@db/drupal_octane'
+
+CONFIRM=''
+while getopts ":y" opt; do
+  case $opt in
+    y) # auto-confirm install
+      CONFIRM='-y'
+      ;;
+    \?)
+      echo "Invalid option: -$OPTARG" >&2
+      ;;
+  esac
+done
+shift $((OPTIND-1))
 
 # Optional profile name.  If omitted, install using existing config.
 PROFILE=$1
@@ -29,11 +42,11 @@ COMPOSER_PROCESS_TIMEOUT=2000 COMPOSER_DISCARD_CHANGES=1 composer install
 if [ -e "src/config/default/system.site.yml" ]; then
   # If config exists, install using it.
   echo "Installing Drupal from existing config..."
-  drush si --db-url=$DB_URL --existing-config
+  drush si --db-url=$DB_URL --existing-config $CONFIRM
 else
   # Otherwise install clean from profile.
   echo "Installing Drupal profile: ${PROFILE}..."
-  drush si --db-url=$DB_URL ${PROFILE}
+  drush si --db-url=$DB_URL ${PROFILE} $CONFIRM
 fi
 
 # Manually set username and password for the admin user.
