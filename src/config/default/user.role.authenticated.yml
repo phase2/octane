@@ -1,15 +1,15 @@
 uuid: 5724837d-36a3-4506-883d-e5c05ac3b663
 langcode: en
 status: true
-dependencies: {}
+dependencies: {  }
 _core:
   default_config_hash: dJ0L2DNSj5q6XVZAGsuVDpJTh5UeYkIPwKrUOOpr8YI
 id: authenticated
-label: "Authenticated user"
+label: 'Authenticated user'
 weight: 1
 is_admin: false
 permissions:
-  - "access content"
-  - "access shortcuts"
-  - "access site-wide contact form"
-  - "view media"
+  - 'access content'
+  - 'access shortcuts'
+  - 'access site-wide contact form'
+  - 'view media'

@@ -26,19 +26,19 @@ content:
     label: hidden
     settings:
       trim_length: 600
-    third_party_settings: {}
+    third_party_settings: {  }
   field_meta_tags:
     type: metatag_empty_formatter
     region: content
     weight: 2
     label: above
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
   links:
     weight: 1
     region: content
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   content_moderation_control: true
   layout_builder__layout: true

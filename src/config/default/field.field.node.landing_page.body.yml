@@ -14,11 +14,11 @@ field_name: body
 entity_type: node
 bundle: landing_page
 label: Description
-description: "A description of this page, for use in teasers and lists of content."
+description: 'A description of this page, for use in teasers and lists of content.'
 required: false
 translatable: true
-default_value: {}
-default_value_callback: ""
+default_value: {  }
+default_value_callback: ''
 settings:
   display_summary: false
 field_type: text_with_summary

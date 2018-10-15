@@ -7,12 +7,12 @@ layout_builder_hide_blocks:
   - local_actions_block
   - local_tasks_block
   - help_block
-  - "system_menu_block:admin"
-  - "system_menu_block:footer"
-  - "system_menu_block:main"
+  - 'system_menu_block:admin'
+  - 'system_menu_block:footer'
+  - 'system_menu_block:main'
   - shortcuts
-  - "system_menu_block:tools"
-  - "system_menu_block:account"
+  - 'system_menu_block:tools'
+  - 'system_menu_block:account'
   - system_breadcrumb_block
   - system_main_block
   - system_messages_block

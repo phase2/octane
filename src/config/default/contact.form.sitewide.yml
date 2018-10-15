@@ -8,15 +8,15 @@ third_party_settings:
   contact_storage:
     submit_text: Send
     show_preview: false
-    disabled_form_message: "This contact form has been disabled."
+    disabled_form_message: 'This contact form has been disabled.'
     maximum_submissions_user: 0
 _core:
   default_config_hash: Z46ux9EOlHDSAvrhCO0L1-QcdeSiAQnQDA1eeK9yqwA
 id: sitewide
-label: "Contact Form"
+label: 'Contact Form'
 recipients:
-  - ""
-reply: ""
+  - ''
+reply: ''
 weight: 0
-message: "Thanks for contacting us. We'll get back to you as soon as we can!"
+message: 'Thanks for contacting us. We''ll get back to you as soon as we can!'
 redirect: /

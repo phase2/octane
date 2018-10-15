@@ -21,20 +21,20 @@ content:
     label: hidden
     type: text_default
     weight: 0
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
     region: content
   field_meta_tags:
     type: metatag_empty_formatter
     region: content
     weight: 2
     label: above
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
   links:
     weight: 1
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
     region: content
 hidden:
   content_moderation_control: true

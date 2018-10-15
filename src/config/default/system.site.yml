@@ -1,10 +1,10 @@
 uuid: 5000773e-6067-4f19-bbc5-6987f479c920
-name: "Drush Site-Install"
+name: 'Drush Site-Install'
 mail: admin@example.com
-slogan: ""
+slogan: ''
 page:
-  403: ""
-  404: ""
+  403: ''
+  404: ''
   front: /node
 admin_compact_mode: false
 weight_select_max: 100

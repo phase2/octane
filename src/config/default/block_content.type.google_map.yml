@@ -1,10 +1,10 @@
 uuid: 9e244189-d582-4764-a1d2-862b9063dc3b
 langcode: en
 status: true
-dependencies: {}
+dependencies: {  }
 _core:
   default_config_hash: I6aL46pRCPwdj90fj4yKCYY9ms3ZcidnCdAtK_LoEWs
 id: google_map
-label: "Google Map"
+label: 'Google Map'
 revision: 0
-description: "Displays a Google map."
+description: 'Displays a Google map.'

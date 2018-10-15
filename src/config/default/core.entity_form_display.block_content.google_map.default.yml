@@ -18,8 +18,8 @@ content:
     weight: 26
     settings:
       size: 60
-      placeholder: ""
-    third_party_settings: {}
+      placeholder: ''
+    third_party_settings: {  }
     type: string_textfield
     region: content
   info:
@@ -28,12 +28,12 @@ content:
     region: content
     settings:
       size: 60
-      placeholder: ""
-    third_party_settings: {}
+      placeholder: ''
+    third_party_settings: {  }
   moderation_state:
     type: moderation_state_default
     weight: 100
-    settings: {}
+    settings: {  }
     region: content
-    third_party_settings: {}
-hidden: {}
+    third_party_settings: {  }
+hidden: {  }

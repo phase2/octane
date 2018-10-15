@@ -20,9 +20,9 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: ""
-      image_link: ""
-    third_party_settings: {}
+      image_style: ''
+      image_link: ''
+    third_party_settings: {  }
     region: content
 hidden:
   created: true

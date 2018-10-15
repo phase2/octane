@@ -12,6 +12,6 @@ id: node
 type_id: entity
 type_settings:
   entity_type: node
-  bundles: {}
-  display_plugins: {}
+  bundles: {  }
+  display_plugins: {  }
 icon_uuid: null

@@ -25,7 +25,7 @@ content:
     weight: 4
     settings:
       display_label: true
-    third_party_settings: {}
+    third_party_settings: {  }
     region: content
   image:
     type: image_widget_crop
@@ -37,7 +37,7 @@ content:
         - freeform
       show_crop_area: true
       crop_preview_image_style: crop_thumbnail
-      crop_types_required: {}
+      crop_types_required: {  }
       show_default_crop: true
       warn_multiple_usages: false
     third_party_settings:
@@ -48,30 +48,30 @@ content:
   moderation_state:
     type: moderation_state_default
     weight: 100
-    settings: {}
+    settings: {  }
     region: content
-    third_party_settings: {}
+    third_party_settings: {  }
   name:
     type: string_textfield
     weight: 3
     settings:
       size: 60
-      placeholder: ""
-    third_party_settings: {}
+      placeholder: ''
+    third_party_settings: {  }
     region: content
   path:
     type: path
     weight: 30
     region: content
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
   status:
     type: boolean_checkbox
     settings:
       display_label: true
     weight: 100
     region: content
-    third_party_settings: {}
+    third_party_settings: {  }
 hidden:
   created: true
   uid: true

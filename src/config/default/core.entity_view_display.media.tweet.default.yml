@@ -19,8 +19,8 @@ content:
     type: twitter_embed
     weight: 1
     label: hidden
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
     region: content
 hidden:
   created: true

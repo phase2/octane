@@ -11,11 +11,11 @@ id: media.instagram.embed_code
 field_name: embed_code
 entity_type: media
 bundle: instagram
-label: "Instagram post"
-description: "Paste media post URL or embed code."
+label: 'Instagram post'
+description: 'Paste media post URL or embed code.'
 required: true
 translatable: false
-default_value: {}
-default_value_callback: ""
-settings: {}
+default_value: {  }
+default_value_callback: ''
+settings: {  }
 field_type: string_long

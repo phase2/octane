@@ -19,8 +19,8 @@ content:
   field_document:
     weight: 0
     label: hidden
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
     type: file_default
     region: content
 hidden:

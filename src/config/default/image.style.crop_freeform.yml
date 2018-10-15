@@ -7,7 +7,7 @@ dependencies:
   module:
     - crop
 name: crop_freeform
-label: "Cropped: Freeform"
+label: 'Cropped: Freeform'
 effects:
   0436c14d-94e4-4ddd-8ffb-b421e3114c31:
     uuid: 0436c14d-94e4-4ddd-8ffb-b421e3114c31

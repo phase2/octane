@@ -1,17 +1,17 @@
 uuid: 3fcd539f-acf6-490a-b6e9-c68be18a71ea
 langcode: en
 status: true
-dependencies: {}
+dependencies: {  }
 _core:
   default_config_hash: sOivTdNRBzCVaqhc-dgc2Hemc3wgEMiQ3k4W1wI2BTY
 id: media_creator
-label: "Media creator"
+label: 'Media creator'
 weight: 5
 is_admin: false
 permissions:
-  - "access media overview"
-  - "access media_browser entity browser pages"
-  - "create media"
-  - "delete media"
-  - "dropzone upload files"
-  - "update media"
+  - 'access media overview'
+  - 'access media_browser entity browser pages'
+  - 'create media'
+  - 'delete media'
+  - 'dropzone upload files'
+  - 'update media'

@@ -22,9 +22,11 @@ content:
     weight: 100
     settings:
       trim_length: 600
-    third_party_settings: {}
+    third_party_settings: {  }
     region: content
   links:
     weight: 101
     region: content
-hidden: {}
+hidden:
+  content_moderation_control: true
+  field_meta_tags: true

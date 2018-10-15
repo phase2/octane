@@ -11,14 +11,15 @@ id: media.image.field_media_in_library
 field_name: field_media_in_library
 entity_type: media
 bundle: image
-label: "Show in media library"
-description: ""
+label: 'Show in media library'
+description: ''
 required: false
 translatable: false
 default_value:
-  - value: 1
-default_value_callback: ""
+  -
+    value: 1
+default_value_callback: ''
 settings:
-  on_label: "Shown in media library"
-  off_label: "Hidden in media library"
+  on_label: 'Shown in media library'
+  off_label: 'Hidden in media library'
 field_type: boolean

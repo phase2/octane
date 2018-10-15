@@ -12,7 +12,7 @@ _core:
   default_config_hash: qEX0c8Yf878jYMC-3TrFlGSSNQeGbl3u0Hs6GJfxA38
 id: content
 name: Content
-description: "An index of all content in your site."
+description: 'An index of all content in your site.'
 read_only: false
 field_settings:
   label:
@@ -22,9 +22,9 @@ field_settings:
     configuration:
       type: first
       fields:
-        - "entity:node/title"
+        - 'entity:node/title'
   node_grants:
-    label: "Node access information"
+    label: 'Node access information'
     property_path: search_api_node_grants
     type: string
     indexed_locked: true
@@ -38,12 +38,12 @@ field_settings:
       roles:
         anonymous: anonymous
       view_mode:
-        "entity:node":
+        'entity:node':
           landing_page: full
           page: default
   status:
     label: null
-    datasource_id: "entity:node"
+    datasource_id: 'entity:node'
     property_path: status
     type: boolean
     indexed_locked: true
@@ -53,7 +53,7 @@ field_settings:
         - node
   uid:
     label: null
-    datasource_id: "entity:node"
+    datasource_id: 'entity:node'
     property_path: uid
     type: integer
     indexed_locked: true
@@ -62,16 +62,16 @@ field_settings:
       module:
         - node
 datasource_settings:
-  "entity:node":
+  'entity:node':
     bundles:
       default: true
-      selected: {}
+      selected: {  }
     languages:
       default: true
-      selected: {}
+      selected: {  }
 processor_settings:
-  add_url: {}
-  aggregated_field: {}
+  add_url: {  }
+  aggregated_field: {  }
   content_access:
     weights:
       preprocess_query: -10
@@ -99,7 +99,7 @@ processor_settings:
       preprocess_index: -9
       preprocess_query: -8
     all_fields: false
-  rendered_item: {}
+  rendered_item: {  }
   stopwords:
     fields:
       - label
@@ -120,10 +120,10 @@ processor_settings:
       - into
       - is
       - it
-      - "no"
+      - 'no'
       - not
       - of
-      - "on"
+      - 'on'
       - or
       - s
       - such
@@ -148,9 +148,9 @@ processor_settings:
     fields:
       - label
       - rendered
-    spaces: ""
+    spaces: ''
     overlap_cjk: 1
-    minimum_word_size: "3"
+    minimum_word_size: '3'
     weights:
       preprocess_index: -6
       preprocess_query: -5

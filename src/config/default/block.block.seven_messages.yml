@@ -7,7 +7,7 @@ dependencies:
   theme:
     - seven
 _core:
-  default_config_hash: "-jYsN5c236dcAkjB4OYknH4um1vE4SdAeDUOG4k_f1E"
+  default_config_hash: '-jYsN5c236dcAkjB4OYknH4um1vE4SdAeDUOG4k_f1E'
 id: seven_messages
 theme: seven
 region: highlighted
@@ -16,7 +16,7 @@ provider: null
 plugin: system_messages_block
 settings:
   id: system_messages_block
-  label: "Status messages"
+  label: 'Status messages'
   provider: system
-  label_display: "0"
-visibility: {}
+  label_display: '0'
+visibility: {  }

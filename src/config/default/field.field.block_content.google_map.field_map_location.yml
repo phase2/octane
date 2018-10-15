@@ -15,7 +15,7 @@ label: Location
 description: 'Enter a location that is recognizable by Google Maps, e.g. "33 School St., Wayland MA" or "Union Station, Worcester MA".'
 required: true
 translatable: false
-default_value: {}
-default_value_callback: ""
-settings: {}
+default_value: {  }
+default_value_callback: ''
+settings: {  }
 field_type: string

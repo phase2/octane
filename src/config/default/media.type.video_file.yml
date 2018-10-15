@@ -1,15 +1,15 @@
 uuid: 3c97c153-3346-4ec6-8ff6-292a536bd4d3
 langcode: en
 status: true
-dependencies: {}
+dependencies: {  }
 _core:
   default_config_hash: oGxRqcXSgI5hGMORFBVykuU8eBeHk1KG9LiDTocLsm0
 id: video_file
-label: "Video file"
-description: "A locally hosted video file"
+label: 'Video file'
+description: 'A locally hosted video file'
 source: video_file
 queue_thumbnail_downloads: false
 new_revision: false
 source_configuration:
   source_field: field_media_video_file
-field_map: {}
+field_map: {  }

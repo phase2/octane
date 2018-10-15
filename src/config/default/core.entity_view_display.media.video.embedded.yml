@@ -25,7 +25,7 @@ content:
       width: 854
       height: 480
       autoplay: true
-    third_party_settings: {}
+    third_party_settings: {  }
     region: content
 hidden:
   created: true

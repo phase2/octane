@@ -7,7 +7,7 @@ dependencies:
   module:
     - user
 id: user_remove_role_action.media_creator
-label: "Remove the Media creator role from the selected user(s)"
+label: 'Remove the Media creator role from the selected user(s)'
 type: user
 plugin: user_remove_role_action
 configuration:

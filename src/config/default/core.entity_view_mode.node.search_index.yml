@@ -11,6 +11,6 @@ third_party_settings:
 _core:
   default_config_hash: fVFfJv_GzBRE-wpRHbfD5a3VjnhbEOXG6lvRd3uaccY
 id: node.search_index
-label: "Search index"
+label: 'Search index'
 targetEntityType: node
 cache: true

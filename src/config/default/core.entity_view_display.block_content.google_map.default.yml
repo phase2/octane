@@ -22,15 +22,15 @@ content:
       include_static_map: false
       include_link: false
       include_text: false
-      iframe_height: "400"
+      iframe_height: '400'
       iframe_width: 100%
       static_scale: 1
       zoom_level: 14
-      link_text: "View larger map"
+      link_text: 'View larger map'
       map_type: m
       langcode: en
-      apikey: ""
-    third_party_settings: {}
+      apikey: ''
+    third_party_settings: {  }
     type: simple_gmap
     region: content
-hidden: {}
+hidden: {  }

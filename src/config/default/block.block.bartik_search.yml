@@ -16,16 +16,16 @@ theme: bartik
 region: content
 weight: 0
 provider: null
-plugin: "views_exposed_filter_block:search-page"
+plugin: 'views_exposed_filter_block:search-page'
 settings:
-  id: "views_exposed_filter_block:search-page"
-  label: ""
+  id: 'views_exposed_filter_block:search-page'
+  label: ''
   provider: views
   label_display: visible
-  views_label: ""
+  views_label: ''
 visibility:
   request_path:
     id: request_path
     pages: /search
     negate: false
-    context_mapping: {}
+    context_mapping: {  }

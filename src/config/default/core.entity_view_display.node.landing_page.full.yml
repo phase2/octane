@@ -18,23 +18,24 @@ third_party_settings:
     allow_custom: true
     enabled: true
     sections:
-      - layout_id: layout_onecol
-        layout_settings: {}
+      -
+        layout_id: layout_onecol
+        layout_settings: {  }
         components:
           6da8e63e-7f2d-42f7-b5c1-999b922d7e63:
             uuid: 6da8e63e-7f2d-42f7-b5c1-999b922d7e63
             region: content
             configuration:
-              label_display: "0"
+              label_display: '0'
               context_mapping:
                 entity: layout_builder.entity
-              id: "field_block:node:landing_page:field_meta_tags"
+              id: 'field_block:node:landing_page:field_meta_tags'
               formatter:
                 type: metatag_empty_formatter
                 label: above
-                settings: {}
-                third_party_settings: {}
-            additional: {}
+                settings: {  }
+                third_party_settings: {  }
+            additional: {  }
             weight: 0
 _core:
   default_config_hash: p4DLjHrWnXIep4EN3A4-OmdUCWBYBkxsr0wUs9ZFD5A
@@ -48,8 +49,8 @@ content:
     region: content
     weight: 1
     label: above
-    settings: {}
-    third_party_settings: {}
+    settings: {  }
+    third_party_settings: {  }
 hidden:
   body: true
   content_moderation_control: true
