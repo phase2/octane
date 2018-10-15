@@ -5,6 +5,10 @@ THEME_PATH="src/themes/particle"
 if [ ! -e ${THEME_PATH} ]; then
   # Install latest Particle theme
   npx phase2/create-particle ${THEME_PATH}
+  # @TODO: Remove this once Particle removes Husky.
+  # Need to remove the default git hooks added by Husky from Particle.
+  # They interfere with project hooks and with Drupal config import/export.
+  rm -rf .git/hooks
 fi
 
 # Install project requirements.
