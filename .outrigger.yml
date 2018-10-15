@@ -39,6 +39,8 @@ scripts:
       - rig project run:welcome
       - rig project up
       - docker-compose -f $PWD/build.yml run --rm cli /var/www/bin/init.sh "$@"
+      # Fix files permissions for Drupal within web container
+      - docker-compose -f $PWD/build.yml run --rm web /var/www/bin/fix-perms.sh
 
   init:
     alias: init
@@ -105,9 +107,8 @@ scripts:
     description: Codebase orientation.
     run:
       - echo 'Welcome to the Project!'
-      - echo 'Please review the README.md, CONTRIBUTING.md, TODOS.md, and the docs/ folder.'
+      - echo 'Please review the README.md to customize your project.'
       - echo 'All custom code is under src/'
-      - echo 'To get started, run "rig project init"'
 
 # This controls configuration for the `project sync:start` command.
 sync:
