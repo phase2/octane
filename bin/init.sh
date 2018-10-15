@@ -29,11 +29,11 @@ COMPOSER_PROCESS_TIMEOUT=2000 COMPOSER_DISCARD_CHANGES=1 composer install
 if [ -e "src/config/default/system.site.yml" ]; then
   # If config exists, install using it.
   echo "Installing Drupal from existing config..."
-  drush si --db-url=$DB_URL --existing-config -y
+  drush si --db-url=$DB_URL --existing-config
 else
   # Otherwise install clean from profile.
   echo "Installing Drupal profile: ${PROFILE}..."
-  drush si --db-url=$DB_URL -y ${PROFILE}
+  drush si --db-url=$DB_URL ${PROFILE}
 fi
 
 # Manually set username and password for the admin user.
