@@ -4,20 +4,19 @@
 DB_URL='mysql://admin:admin@db/drupal_octane'
 
 CONFIRM=''
-while getopts ":y" opt; do
-  case $opt in
-    y) # auto-confirm install
-      CONFIRM='-y'
-      ;;
-    \?)
-      echo "Invalid option: -$OPTARG" >&2
-      ;;
+while [[ $# -gt 0 ]]; do
+  case $1 in
+    -y)
+    CONFIRM='-y'
+    shift # past argument
+    ;;
+    *)    # profile name
+    PROFILE="$1"
+    shift # past argument
+    ;;
   esac
 done
-shift $((OPTIND-1))
 
-# Optional profile name.  If omitted, install using existing config.
-PROFILE=$1
 if [ -z "$PROFILE" ]; then
   # Default install profile is Acquia Lightning.
   PROFILE="lightning"
@@ -48,9 +47,6 @@ else
   echo "Installing Drupal profile: ${PROFILE}..."
   drush si --db-url=$DB_URL ${PROFILE} $CONFIRM
 fi
-
-echo "Fixing Drupal files permissions..."
-./fix-perms.sh
 
 # Manually set username and password for the admin user.
 # @see https://github.com/acquia/blt/issues/2984.

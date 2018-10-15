@@ -29,8 +29,8 @@ scripts:
     run:
       - docker-compose -f $PWD/build.yml run --rm cli
 
-  setup:
-    alias: setup
+  init:
+    alias: init
     description: Run the end-to-end repository initialization and site install script.
     run:
       # Set the PROJECT_ROOT environment variable to the current directory
@@ -40,11 +40,11 @@ scripts:
       - rig project up
       - docker-compose -f $PWD/build.yml run --rm cli /var/www/bin/init.sh
 
-  init:
-    alias: init
-    description: Alternate alias for "rig project setup"
+  setup:
+    alias: setup
+    description: Alternate alias for "rig project init"
     run:
-      - rig project setup
+      - rig project init
 
   up:
     alias: up
