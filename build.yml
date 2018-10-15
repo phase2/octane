@@ -31,7 +31,7 @@ services:
   drush:
     extends:
       service: operational
-    entrypoint: [ "/init", "drush", "@${PROJECT_ROOT}" ]
+    entrypoint: [ "/init", "drush" ]
     working_dir: /var/www/build/html
 
   # Container for running Drupal Console in the docroot.
