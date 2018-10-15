@@ -49,6 +49,9 @@ else
   drush si --db-url=$DB_URL ${PROFILE} $CONFIRM
 fi
 
+echo "Fixing Drupal files permissions..."
+./fix-perms.sh
+
 # Manually set username and password for the admin user.
 # @see https://github.com/acquia/blt/issues/2984.
 drush sql:query "UPDATE users_field_data SET name = 'admin' WHERE uid = 1;"
