@@ -1,0 +1,14 @@
+uuid: 47f73b1f-1868-4c33-ad4f-68e6eb88d260
+langcode: en
+status: true
+dependencies:
+  module:
+    - lightning_core
+    - menu_link_content
+third_party_settings:
+  lightning_core:
+    internal: true
+id: menu_link_content.token
+label: Token
+targetEntityType: menu_link_content
+cache: true

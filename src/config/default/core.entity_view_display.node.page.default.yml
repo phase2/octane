@@ -1,0 +1,40 @@
+uuid: 16cc96f9-d903-4dbd-9199-4fc1693f8e27
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.page.body
+    - field.field.node.page.field_meta_tags
+    - node.type.page
+  module:
+    - metatag
+    - text
+    - user
+_core:
+  default_config_hash: Kfxnq5Imio9VFBoNa_PIkzXoTmjz_T-EY3mOrwDTddU
+id: node.page.default
+targetEntityType: node
+bundle: page
+mode: default
+content:
+  body:
+    label: hidden
+    type: text_default
+    weight: 0
+    settings: {}
+    third_party_settings: {}
+    region: content
+  field_meta_tags:
+    type: metatag_empty_formatter
+    region: content
+    weight: 2
+    label: above
+    settings: {}
+    third_party_settings: {}
+  links:
+    weight: 1
+    settings: {}
+    third_party_settings: {}
+    region: content
+hidden:
+  content_moderation_control: true

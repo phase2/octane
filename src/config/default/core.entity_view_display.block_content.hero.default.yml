@@ -1,0 +1,46 @@
+uuid: 78e9e7c6-9578-4f97-b57d-7232e2e9bf84
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.hero
+    - field.field.block_content.hero.body
+    - field.field.block_content.hero.field_hero_image
+  module:
+    - bg_image_formatter
+    - text
+_core:
+  default_config_hash: f55v3-HlR_dBsZa2fPAFf4vnH8LfLYMeHmILpwSz5Fo
+id: block_content.hero.default
+targetEntityType: block_content
+bundle: hero
+mode: default
+content:
+  body:
+    type: text_default
+    weight: 1
+    region: content
+    label: hidden
+    settings: {}
+    third_party_settings: {}
+  field_hero_image:
+    weight: 0
+    label: hidden
+    settings:
+      image_style: ""
+      css_settings:
+        bg_image_selector: '[data-block-plugin-id="block_content:[block_content:uuid]"], [data-inline-block-uuid="[block_content:uuid]"]'
+        bg_image_z_index: auto
+        bg_image_color: "#FFFFFF"
+        bg_image_x: left
+        bg_image_y: top
+        bg_image_attachment: scroll
+        bg_image_repeat: no-repeat
+        bg_image_background_size: cover
+        bg_image_media_query: all
+        bg_image_important: "1"
+        bg_image_background_size_ie8: 0
+    third_party_settings: {}
+    type: bg_image_formatter
+    region: content
+hidden: {}
