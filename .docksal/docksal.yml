@@ -21,7 +21,7 @@ services:
   db:
     environment:
       # override the default database name
-      MYSQL_DATABASE: drupal_octane
+      MYSQL_DATABASE: ${MYSQL_DATABASE}
       MYSQL_PASSWORD: ${MYSQL_PASSWORD}
       MYSQL_USER: ${MYSQL_USER}
 

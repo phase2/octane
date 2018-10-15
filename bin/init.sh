@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 
+# Database connection for drush.
+DB_URL="mysql://admin:admin@db/drupal_octane"
+
+# Optional profile name.  If omitted, install using existing config.
+PROFILE=$1
+
 THEME_PATH="src/themes/particle"
 # Only download particle theme if it doesn't already exist.
 if [ ! -e ${THEME_PATH} ]; then
@@ -15,8 +21,12 @@ fi
 composer clear-cache
 COMPOSER_PROCESS_TIMEOUT=2000 COMPOSER_DISCARD_CHANGES=1 composer install
 
-# Install site
-drush si --db-url=mysql://admin:admin@db/drupal_octane --existing-config
+# Install Drupal site
+if [ -z "$PROFILE" ]; then
+  drush si --db-url=${DB_URL} --existing-config -y
+else
+  drush si --db-url==${DB_URL} -y ${PROFILE}
+fi
 
 # Manually set username and password for the admin user.
 # @see https://github.com/acquia/blt/issues/2984.
