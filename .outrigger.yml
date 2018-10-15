@@ -66,6 +66,13 @@ scripts:
       - docker-compose stop
       - rig project sync:stop
 
+  restart:
+    alias: restart
+    description: Restart containers.
+    run:
+      - docker-compose stop
+      - docker-compose up -d
+
   rebuild:
     alias: rebuild
     description: Run the end-to-end build process.
