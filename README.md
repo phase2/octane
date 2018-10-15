@@ -9,36 +9,36 @@ Octane is a Drupal 8 project scaffold that provides the following features:
 * (TODO) Provides starting configuration for CI on GitLabs.
 
 ## Installation
-To create a Drupal Octane project, use:
-```$xslt
-composer create-project phase2/octane projectname
-```
-This will create a sub-directory called ``projectname`` and will download
-the files needed to build your Drupal project using the Octane templates.
-The ``projectname`` should be all lowercase and will become the hostname of
-your local Drupal site.
+To create a Drupal Octane project clone this repository to a directory
+named for your project.
 
-NOTE: If you do not have ``composer`` installed locally, you can also simply
-clone this git repository into a new directory and then initialize your
-project as shown below. This will run the initial ``composer install`` from within the
-docker build/cli container.
+Scripts for managing your site are located in the ``bin`` folder:
+* **Native** (no docker containers) - run scripts in ``./bin`` directly.
+* **Docksal** - run a script via ``fin scriptname``.
+* **Outrigger** - run a script via ``rig project scriptname``.
 
-## Using Outrigger
+To initialize your Drupal project, run the ``init`` script. 
+It takes an optional argument to specify which "profile" to install.
+By default the "Lightning" profile will be used. Other options are
+"standard" or "minimal".
 
-If you are using [Outrigger](http://docs.outrigger.sh/) for local development, perform the initial site setup using:
-```$xslt
-rig project init
-```
 This will create the docker containers, create a database, and install Drupal.
-Your site will be available at ``www.projectname.vm``
+Your site will be available at ``projectname.docksal`` for Docksal or
+``projectname.vm`` for Outrigger.
 
-## Using Docksal
-If you are using [Docksal](https://docksal.io/) for local development, perform the initial site setup using:
-```$xslt
+Docksal example:
+```
 fin init
 ```
-This will create the docker containers, create a database, and install Drupal.
-Your site will be available at ``projectname.docksal``
+Outrigger example:
+```
+rig project init
+
+```
+
+If configuration files are detected in the ``src/config/default`` directory,
+the site will be installed using this existing config and the profile argument
+will be ignored.
 
 ## Custom Project Scripts
 Custom scripts for your project should be created in the ``/bin`` folder and
