@@ -3,4 +3,4 @@
 # Causes this script to run inside the docksal cli container.
 #: exec_target = cli
 
-PARTICLE_PL_HOST="design.$VIRTUAL_HOST:8080" bin/theme.sh
+PARTICLE_PL_HOST="design.$VIRTUAL_HOST" bin/theme.sh
