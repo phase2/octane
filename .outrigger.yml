@@ -29,8 +29,8 @@ scripts:
     run:
       - docker-compose -f $PWD/build.yml run --rm cli
 
-  setup:
-    alias: setup
+  init:
+    alias: init
     description: Run the end-to-end repository initialization and site install script.
     run:
       # Set the PROJECT_ROOT environment variable to the current directory
@@ -40,11 +40,11 @@ scripts:
       - rig project up
       - docker-compose -f $PWD/build.yml run --rm cli /var/www/bin/init.sh
 
-  init:
-    alias: init
-    description: Alternate alias for "rig project setup"
+  setup:
+    alias: setup
+    description: Alternate alias for "rig project init"
     run:
-      - rig project setup
+      - rig project init
 
   up:
     alias: up
@@ -65,6 +65,13 @@ scripts:
     run:
       - docker-compose stop
       - rig project sync:stop
+
+  restart:
+    alias: restart
+    description: Restart containers.
+    run:
+      - docker-compose stop
+      - docker-compose up -d
 
   rebuild:
     alias: rebuild
@@ -105,9 +112,8 @@ scripts:
     description: Codebase orientation.
     run:
       - echo 'Welcome to the Project!'
-      - echo 'Please review the README.md, CONTRIBUTING.md, TODOS.md, and the docs/ folder.'
+      - echo 'Please review the README.md to customize your project.'
       - echo 'All custom code is under src/'
-      - echo 'To get started, run "rig project init"'
 
 # This controls configuration for the `project sync:start` command.
 sync:
