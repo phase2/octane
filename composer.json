@@ -78,6 +78,9 @@
   },
   "extra": {
     "enable-patching": true,
+    "patchLevel": {
+      "drupal/core": "-p2"
+    },
     "patches": {
       "drupal/core": {
         "2699157 - Plugin Lazy loading can cause usort warning":
