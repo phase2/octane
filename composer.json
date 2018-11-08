@@ -99,6 +99,9 @@
             "build/html/modules/contrib/{$name}": [
                 "type:drupal-module"
             ],
+            "build/html/libraries/contrib/{$name}": [
+                "type:drupal-library"
+            ],
             "build/html/profiles/contrib/{$name}": [
                 "type:drupal-profile"
             ],
