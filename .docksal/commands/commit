@@ -1,0 +1,34 @@
+#!/usr/bin/env php
+
+<?php
+
+// This is an example of how you can write shell commands using PHP.
+// Feel free to customize this to work for whatever branch
+// structure/commit structure you're using.
+
+echo "I'm written in PHP, find me at .docksal/commands/commit.php for more info!\n\n";
+
+$commit_input = ucfirst(readline('Commit message? '));
+
+if (!$commit_input) {
+  exit('failed: please add a commit message');
+}
+
+// Assumed branch name structure: feature/123-branch-description
+$branch_name = trim(shell_exec('git symbolic-ref --short HEAD'));
+
+// Remove 'feature/'.
+$branch_string = substr($branch_name, 8);
+
+// Breaks the string into the branch number ($branch_info[0])
+// and the branch name ($branch_info[1]).
+$branch_info = explode('-', $branch_string, 2);
+
+// Capitalize the title and remove dashes.
+$branch_title = str_replace('-', ' ', ucfirst($branch_info[1]));
+
+// Concat the commit message and escape quote marks.
+$commit_message = escapeshellarg("$branch_info[0] - $branch_title - $commit_input");
+
+// Run `git commit -m "000 - Branch Description - Commit Message`
+shell_exec("git commit -m $commit_message");
