@@ -6,8 +6,6 @@
 // Feel free to customize this to work for whatever branch
 // structure/commit structure you're using.
 
-echo "I'm written in PHP, find me at .docksal/commands/commit.php for more info!\n\n";
-
 $commit_input = ucfirst(readline('Commit message? '));
 
 if (!$commit_input) {
