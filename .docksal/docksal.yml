@@ -10,8 +10,8 @@ services:
     environment:
       # Include the DOCKER_ENV so Drupal settings can be aware of environment.
       DOCKER_ENV: ${DOCKER_ENV}
-      # Adjust IDE Config for xdebug to work on command line PHP scripts.
-      PHP_IDE_CONFIG: serverName=${VIRTUAL_HOST}
+      # Uncomment following line to use xdebug on command line PHP scripts.
+      # PHP_IDE_CONFIG: serverName=${VIRTUAL_HOST}
 
   web:
     environment:
