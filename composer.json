@@ -105,6 +105,9 @@
             "build/html/profiles/contrib/{$name}": [
                 "type:drupal-profile"
             ],
+            "build/html/libraries/contrib/{$name}": [
+                "type:drupal-library"
+            ],
             "build/html/themes/contrib/{$name}": [
                 "type:drupal-theme"
             ],
