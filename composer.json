@@ -20,6 +20,7 @@
         }
     },
     "require-dev": {
+        "asm89/twig-lint": "^1.0",
         "behat/behat": "^3.0",
         "behat/mink": "1.7.x-dev",
         "behat/mink-goutte-driver": "^1.2",
@@ -74,6 +75,9 @@
         "post-update-cmd": [
             "@project-scaffold",
             "@drupal-scaffold"
+        ],
+        "twig-lint": [
+            "twig-lint --ansi"
         ]
     },
     "extra": {
