@@ -74,6 +74,10 @@
         "post-update-cmd": [
             "@project-scaffold",
             "@drupal-scaffold"
+        ],
+        "test:unit": "phpunit --printer '\\Drupal\\Tests\\Listeners\\HtmlOutputPrinter'",
+        "test": [
+            "@test:unit"
         ]
     },
     "extra": {
