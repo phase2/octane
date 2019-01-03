@@ -5,7 +5,7 @@
  or your current system user. See core/tests/README.md and
  https://www.drupal.org/node/2116263 for details.
 -->
-<phpunit bootstrap="build/html/core/tests/bootstrap.php" colors="true"
+<phpunit bootstrap="vendor/weitzman/drupal-test-traits/src/bootstrap.php" colors="true"
          beStrictAboutTestsThatDoNotTestAnything="true"
          beStrictAboutOutputDuringTests="true"
          beStrictAboutChangesToGlobalState="true">
@@ -34,6 +34,11 @@
     <!-- Example for changing the driver args to mink tests MINK_DRIVER_ARGS value: '["http://127.0.0.1:8510"]' -->
     <!-- Example for changing the driver args to phantomjs tests MINK_DRIVER_ARGS_PHANTOMJS value: '["http://127.0.0.1:8510"]' -->
     <!-- Example for changing the driver args to webdriver tests MINK_DRIVER_ARGS_WEBDRIVER value: '["firefox", null, "http://localhost:4444/wd/hub"]' -->
+
+    <!-- ExistingSite test configurations. -->
+    <env name="DTT_BASE_URL" value="http://web"/>
+    <!-- @todo We need a headless chrome container for JS tests to work out of the box. -->
+    <env name="DTT_API_URL" value="http://headless:9222"/>
   </php>
   <testsuites>
     <testsuite name="unit">
@@ -42,6 +47,7 @@
       <directory>./build/html/sites/*/modules/*/tests/src/Unit</directory>
       <!-- Exclude Core Drupal tests. -->
       <exclude>./build/html/core</exclude>
+      <exclude>./build/html/modules/contrib</exclude>
       <!-- Exclude Composer's vendor directory so we don't run tests there. -->
       <exclude>./vendor</exclude>
       <!-- Exclude pattern lab's vendor directory inside of themes. -->
@@ -53,6 +59,7 @@
       <directory>./build/html/sites/*/modules/*/tests/src/Kernel</directory>
       <!-- Exclude Drupal Kernal tests. -->
       <exclude>./build/html/core</exclude>
+      <exclude>./build/html/modules/contrib</exclude>
       <!-- Exclude pattern lab's vendor directory inside of themes. -->
       <exclude>./*/pattern-lab/vendor</exclude>
     </testsuite>
@@ -62,18 +69,25 @@
       <directory>./build/html/sites/*/modules/*/tests/src/Functional</directory>
       <!-- Exclude Core Drupal Functional tests. -->
       <exclude>./build/html/core</exclude>
+      <exclude>./build/html/modules/contrib</exclude>
       <!-- Exclude pattern lab's vendor directory inside of themes. -->
       <exclude>./*/pattern-lab/vendor</exclude>
     </testsuite>
     <testsuite name="functional-javascript">
       <directory>./build/html/modules/custom/*/tests/src/FunctionalJavascript</directory>
+      <directory>./tests/src/ExistingSite</directory>
       <exclude>./build/html/core</exclude>
       <exclude>./build/html/core/vendor</exclude>
+      <exclude>./build/html/modules/contrib</exclude>
       <!-- Exclude pattern lab's vendor directory inside of themes. -->
       <exclude>./*/pattern-lab/vendor</exclude>
     </testsuite>
     <testsuite name="existing-site">
       <directory>./build/html/modules/custom/*/tests/src/ExistingSite</directory>
+      <directory>./test/src/ExistingSite</directory>
+      <!-- Exclude Core Drupal Functional tests. -->
+      <exclude>./build/html/core</exclude>
+      <exclude>./build/html/modules/contrib</exclude>
       <!-- Exclude pattern lab's vendor directory inside of themes. -->
       <exclude>./src/themes/*/pattern-lab/vendor</exclude>
     </testsuite>
