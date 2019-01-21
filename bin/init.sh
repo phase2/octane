@@ -41,14 +41,9 @@ COMPOSER_PROCESS_TIMEOUT=2000 COMPOSER_DISCARD_CHANGES=1 composer install
 if [ -e "src/config/default/system.site.yml" ]; then
   # If config exists, install using it.
   echo "Installing Drupal from existing config..."
-  drush si --db-url=$DB_URL --existing-config $CONFIRM
+  drush si --db-url=$DB_URL --account-pass="admin" --existing-config $CONFIRM
 else
   # Otherwise install clean from profile.
   echo "Installing Drupal profile: ${PROFILE}..."
-  drush si --db-url=$DB_URL ${PROFILE} $CONFIRM
+  drush si --db-url=$DB_URL --account-pass="admin" ${PROFILE} $CONFIRM
 fi
-
-# Manually set username and password for the admin user.
-# @see https://github.com/acquia/blt/issues/2984.
-drush sql:query "UPDATE users_field_data SET name = 'admin' WHERE uid = 1;"
-drush user:password admin "admin"
