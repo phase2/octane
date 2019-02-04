@@ -41,7 +41,8 @@
         "se/selenium-server-standalone": "^2.53",
         "symfony/css-selector": "^3.4.0",
         "symfony/phpunit-bridge": "^3.4.3",
-        "symfony/debug": "^3.4.0"
+        "symfony/debug": "^3.4.0",
+        "weitzman/drupal-test-traits": "~1.0"
     },
     "require": {
         "acquia/lightning": "^4.0@alpha",
@@ -63,6 +64,9 @@
         "kporras07/composer-symlinks": "^0.1.0@dev",
         "roave/security-advisories": "dev-master"
     },
+    "autoload-dev": {
+        "psr-4": { "Octane\\Tests\\": "test/src/" }
+    },
     "scripts": {
         "drupal-scaffold": "DrupalComposer\\DrupalScaffold\\Plugin::scaffold",
         "project-scaffold": [
@@ -78,6 +82,10 @@
         ],
         "twig-lint": [
             "twig-lint --ansi"
+        ],
+        "test:unit": "phpunit --printer '\\Drupal\\Tests\\Listeners\\HtmlOutputPrinter'",
+        "test": [
+            "@test:unit"
         ]
     },
     "extra": {
